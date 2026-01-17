@@ -1,8 +1,11 @@
 unsavedChanges = "لديك تغييرات غير محفوظة على ملف PDF. ماذا تريد أن تفعل؟"
+pendingRedactionsTitle = "تنقيحات غير مطبّقة"
+pendingRedactions = "لديك تنقيحات غير مطبّقة ستُفقد."
 areYouSure = "هل أنت متأكد أنك تريد المغادرة؟"
 unsavedChangesTitle = "تغييرات غير محفوظة"
 keepWorking = "واصل العمل"
 discardChanges = "تجاهل التغييرات"
+discardRedactions = "تجاهل والمغادرة"
 applyAndContinue = "تطبيق والمتابعة"
 exportAndContinue = "تصدير ومتابعة"
 cancel = "إلغاء"
@@ -340,6 +343,10 @@ advance = "متقدم"
 edit = "عرض وتعديل"
 popular = "المفضل"
 
+[footer]
+discord = "Discord"
+issues = "GitHub"
+
 [settings.preferences]
 title = "التفضيلات"
 
@@ -360,6 +367,7 @@ advanced = "متقدم"
 title = "الأمان والمصادقة"
 security = "الأمان"
 connections = "الاتصالات"
+telegram = "Telegram"
 
 [settings.licensingAnalytics]
 title = "الترخيص والتحليلات"
@@ -434,6 +442,32 @@ currentVersion = "الإصدار الحالي"
 latestVersion = "أحدث إصدار"
 checkForUpdates = "التحقق من التحديثات"
 viewDetails = "عرض التفاصيل"
+serverNeedsUpdate = "يحتاج الخادم إلى التحديث من قِبل المسؤول"
+
+[settings.general.versionInfo]
+title = "معلومات الإصدار"
+description = "تفاصيل إصدار سطح المكتب والخادم"
+desktop = "إصدار سطح المكتب"
+server = "إصدار الخادم"
+
+[settings.security]
+title = "الأمان"
+description = "حدّث كلمة مرورك للحفاظ على أمان حسابك."
+
+[settings.security.password]
+subtitle = "غيّر كلمة مرورك. سيتم تسجيل خروجك بعد التحديث."
+required = "جميع الحقول مطلوبة."
+mismatch = "لا تتطابق كلمتا المرور الجديدتان."
+error = "تعذّر تحديث كلمة المرور. يرجى التحقق من كلمة المرور الحالية والمحاولة مرة أخرى."
+success = "تم تحديث كلمة المرور بنجاح. يرجى تسجيل الدخول مجددًا."
+ssoDisabled = "تتم إدارة تغييرات كلمة المرور بواسطة موفر الهوية لديك."
+current = "كلمة المرور الحالية"
+currentPlaceholder = "أدخل كلمة المرور الحالية"
+new = "كلمة مرور جديدة"
+newPlaceholder = "أدخل كلمة مرور جديدة"
+confirm = "تأكيد كلمة المرور الجديدة"
+confirmPlaceholder = "أعد إدخال كلمة المرور الجديدة"
+update = "تحديث كلمة المرور"
 
 [settings.hotkeys]
 title = "اختصارات لوحة المفاتيح"
@@ -488,11 +522,16 @@ low = "منخفض"
 title = "تغيير بيانات الاعتماد"
 header = "تحديث تفاصيل حسابك"
 changePassword = "أنت تستخدم بيانات تسجيل الدخول الافتراضية. يرجى إدخال كلمة مرور جديدة"
+ssoManaged = "يتم إدارة حسابك بواسطة موفر الهوية."
 newUsername = "اسم المستخدم الجديد"
 oldPassword = "كلمة المرور الحالية"
 newPassword = "كلمة المرور الجديدة"
 confirmNewPassword = "تأكيد كلمة المرور الجديدة"
 submit = "إرسال التغييرات"
+credsUpdated = "تم تحديث الحساب"
+description = "تم حفظ التغييرات. يرجى تسجيل الدخول مجددًا."
+error = "تعذّر تحديث اسم المستخدم. يرجى التحقق من كلمة المرور والمحاولة مرة أخرى."
+changeUsername = "حدّث اسم المستخدم. سيتم تسجيل خروجك بعد التحديث."
 
 [account]
 title = "إعدادات الحساب"
@@ -500,6 +539,8 @@ accountSettings = "إعدادات الحساب"
 adminSettings = "إعدادات المسؤول - عرض وإضافة المستخدمين"
 userControlSettings = "إعدادات التحكم في المستخدم"
 changeUsername = "تغيير اسم المستخدم"
+changeUsernameDescription = "حدّث اسم المستخدم. سيتم تسجيل خروجك بعد التحديث."
+newUsernamePlaceholder = "أدخل اسم المستخدم الجديد"
 newUsername = "اسم المستخدم الجديد"
 password = "كلمة مرور التأكيد"
 oldPassword = "كلمة المرور القديمة"
@@ -707,6 +748,11 @@ desc = "اكتشاف الصور الممسوحة وتقسيمها إلى صفح�
 tags = "توقيع،إمضاء"
 title = "توقيع"
 desc = "إضافة التوقيع إلى PDF عن طريق الرسم أو النص أو الصورة"
+
+[home.annotate]
+tags = "تعليق, تمييز, رسم"
+title = "تعليق"
+desc = "قم بتمييز ورسم وإضافة ملاحظات وأشكال في العارض"
 
 [home.flatten]
 tags = "تبسيط،إزالة،تفاعلي"
@@ -918,8 +964,8 @@ desc = "تراكب ملف PDF فوق آخر"
 title = "تراكب ملفات PDF"
 
 [home.pdfTextEditor]
-title = "محرر نص PDF"
-desc = "حرّر النصوص والصور الموجودة داخل ملفات PDF"
+title = "محرر نصوص PDF"
+desc = "مراجعة وتحرير صادرات Stirling PDF بصيغة JSON مع تحرير نصوص مجمّعة وإعادة إنشاء PDF"
 
 [home.addText]
 tags = "نص,تعليق,تسمية"
@@ -930,6 +976,7 @@ desc = "أضف نصاً مخصصاً في أي مكان داخل PDF"
 addFiles = "إضافة ملفات"
 uploadFromComputer = "الرفع من الكمبيوتر"
 openFromComputer = "فتح من الكمبيوتر"
+mobileUpload = "رفع من الهاتف المحمول"
 
 [viewPdf]
 tags = "عرض,قراءة,تعليق,نص,صورة"
@@ -1245,6 +1292,37 @@ cbzOptions = "خيارات التحويل من CBZ إلى PDF"
 optimizeForEbook = "تحسين PDF لقارئات الكتب الإلكترونية (يستخدم Ghostscript)"
 cbzOutputOptions = "خيارات التحويل من PDF إلى CBZ"
 cbzDpi = "DPI لعرض الصور"
+cbrOptions = "خيارات CBR"
+cbrOutputOptions = "خيارات تحويل PDF إلى CBR"
+cbrDpi = "DPI لعرض الصور"
+svgPdfOptions = "SVG to PDF Options"
+combineSvgs = "Combine SVGs into single PDF"
+combineSvgsDescription = "Combine all SVG files into one PDF with multiple pages, or create separate PDFs for each SVG"
+svgVectorNote = "SVG files are rendered as vector graphics for crisp output at any resolution. Dimensions from the SVG determine the PDF page size."
+
+[convert.ebookOptions]
+ebookOptions = "خيارات تحويل الكتب الإلكترونية إلى PDF"
+ebookOptionsDesc = "خيارات لتحويل الكتب الإلكترونية إلى PDF"
+embedAllFonts = "تضمين جميع الخطوط"
+embedAllFontsDesc = "تضمين كل الخطوط من الكتاب الإلكتروني في ملف PDF المُنشأ"
+includeTableOfContents = "تضمين جدول المحتويات"
+includeTableOfContentsDesc = "إضافة جدول محتويات مُنشأ إلى ملف PDF الناتج"
+includePageNumbers = "تضمين أرقام الصفحات"
+includePageNumbersDesc = "إضافة أرقام صفحات إلى ملف PDF المُنشأ"
+optimizeForEbookPdf = "تحسين لقارئات الكتب الإلكترونية"
+optimizeForEbookPdfDesc = "تحسين PDF لقراءة الكتب الإلكترونية (حجم ملف أصغر، عرض أفضل على أجهزة e-Ink)"
+
+[convert.epubOptions]
+epubOptions = "خيارات تحويل PDF إلى كتاب إلكتروني"
+epubOptionsDesc = "خيارات لتحويل PDF إلى EPUB/AZW3"
+detectChapters = "اكتشاف الفصول"
+detectChaptersDesc = "اكتشاف العناوين التي تبدو كفصول وإدراج فواصل صفحات EPUB"
+targetDevice = "الجهاز المستهدف"
+targetDeviceDesc = "اختر ملف إخراج مُحسّن لجهاز القراءة"
+outputFormat = "صيغة الإخراج"
+outputFormatDesc = "اختر صيغة إخراج الكتاب الإلكتروني"
+tabletPhone = "جهاز لوحي/هاتف (مع صور)"
+kindleEink = "Kindle e-Ink (تحسين للنص)"
 
 [imageToPdf]
 tags = "تحويل,صورة,jpg,صورة,صورة فوتوغرافية"
@@ -1322,6 +1400,7 @@ applySignatures = "تطبيق الصور"
 name = "صورة"
 placeholder = "ارفع صورة"
 label = "ملف صورة"
+hint = "Supports PNG, JPEG, GIF, BMP, TIFF, and SVG files. SVG files will be converted to PNG for embedding."
 
 [addImage.steps]
 configure = "تهيئة الصورة"
@@ -1361,6 +1440,11 @@ header = "Add attachments"
 add = "إضافة مرفق"
 remove = "إزالة المرفق"
 embed = "تضمين مرفق"
+convertToPdfA3b = "تحويل إلى PDF/A-3b"
+convertToPdfA3bDescription = "ينشئ ملف PDF للأرشفة مع مرفقات مضمنة"
+convertToPdfA3bTooltip = "PDF/A-3b هو صيغة أرشفة تضمن الحفظ على المدى الطويل. يسمح بتضمين صيغ ملفات عشوائية كمرفقات. يتطلب التحويل استخدام Ghostscript وقد يستغرق وقتًا أطول للملفات الكبيرة."
+convertToPdfA3bTooltipHeader = "حول تحويل PDF/A-3b"
+convertToPdfA3bTooltipTitle = "ما الذي يفعله"
 submit = "Add attachments"
 
 [watermark]
@@ -2306,6 +2390,10 @@ saved = "محفوظ"
 label = "رفع صورة التوقيع"
 placeholder = "اختر ملف صورة"
 hint = "ارفع صورة PNG أو JPG لتوقيعك"
+removeBackground = "إزالة الخلفية البيضاء (جعلها شفافة)"
+processing = "جارٍ معالجة الصورة..."
+backgroundRemovalFailedTitle = "فشل إزالة الخلفية"
+backgroundRemovalFailedMessage = "تعذّر إزالة الخلفية من الصورة. سيتم استخدام الصورة الأصلية بدلًا من ذلك."
 
 [sign.instructions]
 title = "كيفية إضافة توقيع"
@@ -2350,6 +2438,11 @@ note = "التسطيح يزيل العناصر التفاعلية من PDF وي�
 [flatten.options.flattenOnlyForms]
 label = "تسطيح النماذج فقط"
 desc = "تسطيح حقول النماذج فقط مع إبقاء العناصر التفاعلية الأخرى كما هي"
+
+[flatten.renderDpi]
+label = "DPI العرض (اختياري، يوصى بـ 150 DPI)"
+help = "اتركه فارغًا لاستخدام الإعداد الافتراضي للنظام. زيادة DPI تحسّن الحدة لكنها تزيد وقت المعالجة وحجم الملف."
+placeholder = "مثال: 150"
 
 [flatten.results]
 title = "نتائج التسطيح"
@@ -2925,6 +3018,7 @@ header = "اقتصاص PDF"
 submit = "إرسال"
 noFileSelected = "حدّد ملف PDF لبدء القص"
 reset = "إعادة التعيين إلى كامل PDF"
+autoCrop = "اقتصاص تلقائي للمساحات البيضاء"
 
 [crop.preview]
 title = "معاينة منطقة القص"
@@ -3036,6 +3130,91 @@ title = "الحصول على معلومات عن PDF"
 header = "الحصول على معلومات عن PDF"
 submit = "الحصول على المعلومات"
 downloadJson = "تحميل JSON"
+processing = "جارٍ استخراج المعلومات..."
+results = "النتائج"
+noResults = "شغّل الأداة لإنشاء تقرير."
+downloads = "التنزيلات"
+noneDetected = "لم يتم اكتشاف أي شيء"
+indexTitle = "الفهرس"
+
+[getPdfInfo.report]
+entryLabel = "ملخص المعلومات الكامل"
+shortTitle = "معلومات PDF"
+
+[getPdfInfo.sections]
+metadata = "البيانات الوصفية"
+formFields = "حقول النماذج"
+basicInfo = "معلومات أساسية"
+documentInfo = "معلومات المستند"
+compliance = "الامتثال"
+encryption = "التشفير"
+permissions = "الأذونات"
+other = "أخرى"
+perPageInfo = "معلومات لكل صفحة"
+tableOfContents = "جدول المحتويات"
+
+[getPdfInfo.other]
+attachments = "المرفقات"
+embeddedFiles = "ملفات مضمنة"
+javaScript = "JavaScript"
+layers = "الطبقات"
+structureTree = "شجرة البنية"
+xmp = "بيانات XMP الوصفية"
+
+[getPdfInfo.perPage]
+size = "الحجم"
+annotations = "التعليقات التوضيحية"
+images = "الصور"
+links = "الروابط"
+fonts = "الخطوط"
+xobjects = "عدد كائنات XObject"
+multimedia = "وسائط متعددة"
+
+[getPdfInfo.summary]
+pages = "الصفحات"
+fileSize = "حجم الملف"
+pdfVersion = "إصدار PDF"
+language = "اللغة"
+title = "ملخص PDF"
+author = "المؤلف"
+created = "تم الإنشاء"
+modified = "تم التعديل"
+permsAll = "جميع الأذونات مسموح بها"
+permsRestricted = "{{count}} قيود"
+permsMixed = "بعض الأذونات مقيّدة"
+hasCompliance = "يتضمن معايير امتثال"
+noCompliance = "لا توجد معايير امتثال"
+basic = "معلومات أساسية"
+documentInfo = "معلومات المستند"
+securityTitle = "حالة الأمان"
+technical = "تقني"
+overviewTitle = "نظرة عامة على PDF"
+
+[getPdfInfo.summary.security]
+encrypted = "PDF مشفّر - توجد حماية بكلمة مرور"
+unencrypted = "PDF غير مُشفّر - لا توجد حماية بكلمة مرور"
+
+[getPdfInfo.summary.tech]
+images = "الصور"
+fonts = "الخطوط"
+formFields = "حقول النماذج"
+embeddedFiles = "ملفات مضمنة"
+javaScript = "JavaScript"
+layers = "الطبقات"
+bookmarks = "الإشارات المرجعية"
+multimedia = "وسائط متعددة"
+
+[getPdfInfo.summary.overview]
+untitled = "مستند بلا عنوان"
+unknown = "مؤلف غير معروف"
+text = "هذا ملف PDF يحتوي على {{pages}} صفحة بعنوان {{title}} وتم إنشاؤه بواسطة {{author}} (إصدار PDF {{version}})."
+
+[getPdfInfo.error]
+partial = "تعذّر معالجة بعض الملفات."
+unexpected = "حدث خطأ غير متوقع أثناء الاستخراج."
+
+[getPdfInfo.status]
+complete = "اكتمل الاستخراج"
 
 [extractPage]
 tags = "استخراج"
@@ -3070,6 +3249,7 @@ title = "طريقة التنقيح"
 mode = "الوضع"
 automatic = "تلقائي"
 automaticDesc = "تنقيح النص بناءً على مصطلحات البحث"
+automaticDisabledTooltip = "حدد ملفات في مدير الملفات لتنقيح عدة ملفات دفعة واحدة"
 manual = "يدوي"
 manualDesc = "انقر واسحب لتنقيح مناطق محددة"
 manualComingSoon = "التنقيح اليدوي قريبًا"
@@ -3140,8 +3320,35 @@ text = "مطابقة الكلمات الكاملة فقط، وليس المطا�
 title = "التحويل إلى PDF-Image"
 text = "يحوّل PDF إلى PDF قائم على الصور بعد التنقيح. يضمن إزالة النص خلف صناديق التنقيح تمامًا وعدم إمكانية استعادته."
 
+[redact.tooltip.manual.header]
+title = "عناصر التحكم في التنقيح اليدوي"
+
+[redact.tooltip.manual.markText]
+title = "أداة تعليم النص"
+text = "حدّد نصًا مباشرة على ملف PDF لتمييزه للتنقيح. انقر واسحب لتحديد النص الذي تريد تنقيحه."
+
+[redact.tooltip.manual.markArea]
+title = "أداة تعليم المنطقة"
+text = "ارسم مناطق مستطيلة على ملف PDF لتمييز مناطق للتنقيح. مفيد لتنقيح الصور أو التوقيعات أو الأشكال غير المنتظمة."
+
+[redact.tooltip.manual.apply]
+title = "تطبيق التنقيحات"
+text = "بعد تعليم المحتوى، انقر 'تطبيق' لتنقيح جميع المناطق المعلَّمة نهائيًا. يُظهر العداد عدد التنقيحات الجاهزة للتطبيق."
+bullet1 = "قم بتعليم ما تشاء من مناطق قبل التطبيق"
+bullet2 = "تُطبَّق جميع التنقيحات المعلّقة دفعة واحدة"
+bullet3 = "لا يمكن التراجع عن التنقيحات بعد تطبيقها"
+
 [redact.manual]
+title = "أدوات التنقيح"
+instructions = "حدّد نصًا أو ارسم مناطق على ملف PDF لتمييز المحتوى للتنقيح."
+markText = "تعليم النص"
+markArea = "تعليم المنطقة"
+pendingLabel = "معلّق:"
+applyWarning = "⚠️ تطبيق دائم، لا يمكن التراجع عنه وسيُحذف البيانات الموجودة تحته"
+apply = "تطبيق"
+noMarks = "لا توجد علامات تنقيح. استخدم الأدوات أعلاه لتمييز محتوى للتنقيح."
 header = "تنقيح يدوي"
+controlsTitle = "عناصر التحكم في التنقيح اليدوي"
 textBasedRedaction = "تنقيح قائم على النص"
 pageBasedRedaction = "تنقيح حسب الصفحة"
 convertPDFToImageLabel = "تحويل PDF إلى PDF-Image (لإزالة النص خلف الصندوق)"
@@ -3256,6 +3463,19 @@ placeholder = "أدخل عدد التقسيمات الأفقية"
 [split-by-sections.vertical]
 label = "التقسيمات العمودية"
 placeholder = "أدخل عدد التقسيمات العمودية"
+
+[split-by-sections.splitMode]
+label = "وضع التقسيم"
+description = "اختر كيفية تقسيم الصفحات"
+splitAll = "تقسيم جميع الصفحات"
+splitAllExceptFirst = "تقسيم الجميع باستثناء الأولى"
+splitAllExceptLast = "تقسيم الجميع باستثناء الأخيرة"
+splitAllExceptFirstAndLast = "تقسيم الجميع باستثناء الأولى والأخيرة"
+custom = "صفحات مخصصة"
+
+[split-by-sections.customPages]
+label = "أرقام صفحات مخصصة"
+placeholder = "مثال: 2,4,6"
 
 [AddStampRequest]
 tags = "ختم, إضافة صورة, صورة وسط, علامة مائية, PDF, تضمين, تخصيص"
@@ -3618,6 +3838,19 @@ filesize = "حجم الملف"
 [compress.grayscale]
 label = "تطبيق التدرج الرمادي للضغط"
 
+[compress.linearize]
+label = "تهيئة PDF خطيًا لعرض سريع على الويب"
+
+[compress.lineArt]
+label = "تحويل الصور إلى رسومات خطية"
+description = "يستخدم ImageMagick لتقليل الصفحات إلى أبيض وأسود عالي التباين لأقصى تقليل للحجم."
+unavailable = "لم يتم تثبيت ImageMagick على هذا الخادم أو لم يتم تمكينه"
+detailLevel = "مستوى التفاصيل"
+edgeEmphasis = "تركيز الحواف"
+edgeLow = "خفيف"
+edgeMedium = "متوازن"
+edgeHigh = "قوي"
+
 [compress.tooltip.header]
 title = "نظرة عامة على إعدادات الضغط"
 
@@ -3635,6 +3868,10 @@ bullet2 = "القيم المرتفعة تقلّل حجم الملف"
 title = "تدرّج رمادي"
 text = "حدد هذا الخيار لتحويل جميع الصور إلى الأبيض والأسود، ما قد يقلّل حجم الملف بشكل ملحوظ خاصة لملفات PDF الممسوحة أو الكثيرة الصور."
 
+[compress.tooltip.lineArt]
+title = "الرسومات الخطية"
+text = "حوّل الصفحات إلى أبيض وأسود عالي التباين باستخدام ImageMagick. استخدم مستوى التفاصيل للتحكم بكمية المحتوى الذي يصبح أسود، وتركيز الحواف للتحكم في مدى قوة اكتشاف الحواف."
+
 [compress.error]
 failed = "حدث خطأ أثناء ضغط PDF."
 
@@ -3646,6 +3883,11 @@ failed = "حدث خطأ أثناء ضغط PDF."
 [compress.selectText.1]
 _value = "إعدادات الضغط"
 1 = "1-3 ضغط PDF،</br> 4-6 ضغط صور خفيف،</br> 7-9 ضغط صور قوي سيقلّل جودة الصور بشكل كبير"
+
+[compress.compressionLevel]
+range1to3 = "القيم المنخفضة تحافظ على الجودة لكنها تنتج ملفات أكبر"
+range4to6 = "ضغط متوسط مع خفض معتدل للجودة"
+range7to9 = "القيم الأعلى تقلل حجم الملف بشكل كبير لكنها قد تقلل وضوح الصور"
 
 [decrypt]
 passwordPrompt = "هذا الملف محمي بكلمة مرور. يرجى إدخال كلمة المرور:"
@@ -3790,7 +4032,7 @@ version = "الإصدار الحالي"
 title = "توثيق API"
 header = "توثيق API"
 desc = "عرض واختبار نقاط نهاية Stirling PDF API"
-tags = "api,توثيق,swagger,نقاط النهاية,تطوير"
+tags = "api,documentation,swagger,endpoints,development"
 
 [cookieBanner.popUp]
 title = "كيف نستخدم ملفات تعريف الارتباط"
@@ -3828,8 +4070,8 @@ title = "التحليلات"
 description = "تساعدنا هذه الملفات على فهم كيفية استخدام أدواتنا، كي نركّز على بناء الميزات الأكثر قيمة لمجتمعنا. كن مطمئنًا—‏Stirling PDF لا يمكنه ولن يتتبع محتوى المستندات التي تعمل عليها."
 
 [cookieBanner.services]
-posthog = "تحليلات PostHog"
-scarf = "Scarf بكسل"
+posthog = "PostHog Analytics"
+scarf = "Scarf Pixel"
 
 [removeMetadata]
 submit = "إزالة البيانات الوصفية"
@@ -3886,22 +4128,97 @@ deleteSelected = "حذف الصفحات المحددة"
 closePdf = "إغلاق PDF"
 exportAll = "تصدير PDF"
 downloadSelected = "تنزيل الملفات المحددة"
-downloadAll = "تنزيل الكل"
-saveAll = "حفظ الكل"
+annotations = "تعليقات"
+exportSelected = "تصدير الصفحات المحددة"
+saveChanges = "حفظ التغييرات"
 toggleTheme = "تبديل السِمة"
-toggleBookmarks = "تبديل الإشارات المرجعية"
 language = "اللغة"
+toggleAnnotations = "تبديل ظهور التعليقات التوضيحية"
 search = "بحث في PDF"
 panMode = "وضع السحب"
+applyRedactionsFirst = "طبّق التنقيحات أولًا"
 rotateLeft = "تدوير لليسار"
 rotateRight = "تدوير لليمين"
 toggleSidebar = "تبديل الشريط الجانبي"
-exportSelected = "تصدير الصفحات المحددة"
-toggleAnnotations = "تبديل ظهور التعليقات التوضيحية"
-annotationMode = "تبديل وضع التعليقات"
+toggleBookmarks = "تبديل الإشارات المرجعية"
 print = "طباعة PDF"
 draw = "رسم"
+redact = "تنقيح"
+exitRedaction = "الخروج من وضع التنقيح"
 save = "حفظ"
+downloadAll = "تنزيل الكل"
+saveAll = "حفظ الكل"
+
+[textAlign]
+left = "يسار"
+center = "وسط"
+right = "يمين"
+
+[annotation]
+title = "تعليق"
+desc = "استخدم التمييز والقلم والنص والملاحظات. تبقى التغييرات مباشرة—لا حاجة للتسطيح."
+highlight = "تمييز"
+pen = "قلم"
+text = "مربع نص"
+note = "ملاحظة"
+rectangle = "مستطيل"
+ellipse = "بيضاوي"
+select = "تحديد"
+exit = "الخروج من وضع التعليق"
+strokeWidth = "العرض"
+opacity = "العتامة"
+strokeOpacity = "عتامة الحد"
+fillOpacity = "عتامة التعبئة"
+fontSize = "حجم الخط"
+chooseColor = "اختر اللون"
+color = "اللون"
+strokeColor = "لون الحد"
+fillColor = "لون التعبئة"
+underline = "تسطير"
+strikeout = "شطب"
+squiggly = "خط متعرج"
+inkHighlighter = "أداة تمييز بخط اليد"
+freehandHighlighter = "أداة تمييز بخط اليد"
+square = "مربع"
+circle = "دائرة"
+polygon = "مضلع"
+line = "خط"
+stamp = "إضافة صورة"
+textMarkup = "وسم النص"
+drawing = "رسم"
+shapes = "أشكال"
+notesStamps = "ملاحظات وأختام"
+settings = "الإعدادات"
+borderOn = "الحد: مفعّل"
+borderOff = "الحد: معطّل"
+editInk = "تحرير القلم"
+editLine = "تحرير الخط"
+editNote = "تحرير الملاحظة"
+editText = "تحرير مربع النص"
+editTextMarkup = "تحرير وسم النص"
+editSelected = "تحرير التعليق"
+editSquare = "تحرير المربع"
+editCircle = "تحرير الدائرة"
+editPolygon = "تحرير المضلع"
+unsupportedType = "هذا النوع من التعليقات غير مدعوم بالكامل للتحرير."
+textAlignment = "محاذاة النص"
+noteIcon = "أيقونة الملاحظة"
+imagePreview = "معاينة"
+contents = "المحتوى"
+backgroundColor = "لون الخلفية"
+clearBackground = "إزالة الخلفية"
+noBackground = "بدون خلفية"
+stampSettings = "إعدادات الختم"
+savingCopy = "جارٍ تحضير التنزيل..."
+saveFailed = "تعذّر حفظ النسخة"
+saveReady = "التنزيل جاهز"
+selectAndMove = "تحديد وتحرير"
+editSelectDescription = "انقر تعليقًا موجودًا لتحرير لونه أو عتامته أو نصه أو حجمه."
+editStampHint = "لتغيير الصورة، احذف هذا الختم وأضف واحدًا جديدًا."
+editSwitchToSelect = "بدّل إلى «تحديد وتحرير» لتحرير هذا التعليق."
+undo = "تراجع"
+redo = "إعادة"
+applyChanges = "تطبيق التغييرات"
 saveChanges = "حفظ التغييرات"
 
 [search]
@@ -3953,12 +4270,20 @@ settings = "إعدادات"
 adminSettings = "إعدادات المشرف"
 allTools = "كل الأدوات"
 reader = "القارئ"
+tours = "جولات"
+showMeAround = "أرني جولة"
+
+[quickAccess.toursTooltip]
+admin = "شاهد الشروحات هنا: جولة الأدوات، جولة التصميم الجديد V2، وجولة المسؤول."
+user = "شاهد الشروحات هنا: جولة الأدوات وجولة التصميم الجديد V2."
 
 [quickAccess.helpMenu]
 toolsTour = "جولة الأدوات"
 toolsTourDesc = "تعرّف على ما تستطيع الأدوات فعله"
 adminTour = "جولة المسؤول"
 adminTourDesc = "استكشف إعدادات وميزات المسؤول"
+whatsNewTour = "اطّلع على الجديد في V2"
+whatsNewTourDesc = "جولة في التصميم المُحدَّث"
 
 [admin]
 error = "خطأ"
@@ -3977,6 +4302,8 @@ fetchError = "فشل تحميل الإعدادات"
 saveError = "فشل حفظ الإعدادات"
 saved = "تم حفظ الإعدادات بنجاح"
 saveSuccess = "تم حفظ الإعدادات بنجاح"
+success = "تم حفظ الإعدادات بنجاح"
+error = "فشل حفظ الإعدادات"
 save = "حفظ التغييرات"
 discard = "تجاهل"
 restartRequired = "مطلوب إعادة تشغيل"
@@ -4099,6 +4426,13 @@ description = "المسار إلى ملف WeasyPrint التنفيذي لتحوي
 [admin.settings.general.customPaths.operations.unoconvert]
 label = "ملف unoconvert التنفيذي"
 description = "المسار إلى LibreOffice unoconvert لتحويل المستندات (اتركه فارغًا للإعداد الافتراضي: /opt/venv/bin/unoconvert)"
+
+[admin.settings.general.frontendUrl]
+label = "عنوان URL للواجهة الأمامية"
+description = "عنوان URL الأساسي للواجهة الأمامية (مثل https://pdf.example.com). يُستخدم لروابط دعوات البريد الإلكتروني وعمليات الرفع عبر رمز QR على الهاتف المحمول. اتركه فارغًا لاستخدام عنوان URL للواجهة الخلفية."
+
+[admin.settings.badge]
+clickToUpgrade = "انقر لعرض تفاصيل الخطة"
 
 [admin.settings.security]
 title = "الأمان"
@@ -4236,6 +4570,19 @@ connect = "ربط"
 disconnect = "قطع الاتصال"
 disconnected = "تم قطع اتصال المزوّد بنجاح"
 disconnectError = "فشل قطع اتصال المزوّد"
+mobileScannerConvertToPdf = "تحويل الصور إلى PDF"
+mobileScannerConvertToPdfDesc = "تحويل الصور المرفوعة تلقائيًا إلى صيغة PDF. إذا تم التعطيل، ستُحفظ الصور كما هي."
+mobileScannerImageResolution = "دقة الصورة"
+mobileScannerImageResolutionDesc = "دقة الصور المرفوعة. \"مخفَّضة\" تغيّر حجم الصور إلى حد أقصى 1200px لتقليل حجم الملف."
+imageResolutionFull = "كاملة (الحجم الأصلي)"
+imageResolutionReduced = "مخفَّضة (حتى 1200px)"
+mobileScannerPageFormat = "تنسيق الصفحة"
+mobileScannerPageFormatDesc = "حجم صفحة PDF للصور المحوَّلة. \"احتفاظ\" يستخدم أبعاد الصورة الأصلية."
+pageFormatKeep = "احتفاظ (الأبعاد الأصلية)"
+pageFormatA4 = "A4 (210×297mm)"
+pageFormatLetter = "Letter (8.5×11in)"
+mobileScannerStretchToFit = "تمديد لملء الصفحة"
+mobileScannerStretchToFitDesc = "مدّ الصور لملء الصفحة كاملة. إذا تم التعطيل، ستتم محاذاة الصور في الوسط مع الحفاظ على نسبة العرض إلى الارتفاع."
 
 [admin.settings.connections.ssoAutoLogin]
 label = "تسجيل دخول تلقائي عبر SSO"
@@ -4303,6 +4650,122 @@ description = "إنشاء حسابات المستخدمين تلقائيًا ع�
 [admin.settings.connections.saml2.blockRegistration]
 label = "حظر التسجيل"
 description = "منع تسجيل المستخدمين الجدد عبر SAML2"
+
+[admin.settings.connections.mobileScanner]
+label = "رفع من الهاتف المحمول"
+enable = "تمكين الرفع عبر رمز QR"
+description = "السماح للمستخدمين برفع الملفات من الأجهزة المحمولة عبر مسح رمز QR"
+note = "ملاحظة: يتطلب تكوين عنوان URL للواجهة الأمامية. "
+link = "الضبط في إعدادات النظام"
+mobileScannerConvertToPdf = "تحويل الصور إلى PDF"
+mobileScannerConvertToPdfDesc = "تحويل الصور المرفوعة تلقائيًا إلى صيغة PDF. إذا تم التعطيل، ستُحفظ الصور كما هي."
+mobileScannerImageResolution = "دقة الصورة"
+mobileScannerImageResolutionDesc = "دقة الصور المرفوعة. \"مخفَّضة\" تغيّر حجم الصور إلى حد أقصى 1200px لتقليل حجم الملف."
+imageResolutionFull = "كاملة (الحجم الأصلي)"
+imageResolutionReduced = "مخفَّضة (حتى 1200px)"
+mobileScannerPageFormat = "تنسيق الصفحة"
+mobileScannerPageFormatDesc = "حجم صفحة PDF للصور المحوَّلة. \"احتفاظ\" يستخدم أبعاد الصورة الأصلية."
+pageFormatKeep = "احتفاظ (الأبعاد الأصلية)"
+pageFormatA4 = "A4 (210×297mm)"
+pageFormatLetter = "Letter (8.5×11in)"
+mobileScannerStretchToFit = "تمديد لملء الصفحة"
+mobileScannerStretchToFitDesc = "مدّ الصور لملء الصفحة كاملة. إذا تم التعطيل، ستتم محاذاة الصور في الوسط مع الحفاظ على نسبة العرض إلى الارتفاع."
+
+[admin.settings.telegram]
+title = "روبوت Telegram"
+description = "اضبط اتصال روبوت Telegram، ضوابط الوصول، وسلوك التغذية الراجعة."
+
+[admin.settings.telegram.enabled]
+label = "تمكين روبوت Telegram"
+description = "السماح للمستخدمين بالتفاعل مع Stirling PDF عبر روبوت Telegram المُكوَّن لديك."
+
+[admin.settings.telegram.botUsername]
+label = "اسم مستخدم الروبوت"
+description = "الاسم العام لروبوت Telegram."
+
+[admin.settings.telegram.botToken]
+label = "رمز الروبوت"
+description = "رمز API المُقدَّم من BotFather لروبوت Telegram."
+
+[admin.settings.telegram.pipelineInboxFolder]
+label = "مجلد الوارد"
+description = "مجلد تحت دليل خط المعالجة حيث تُخزَّن ملفات Telegram الواردة."
+
+[admin.settings.telegram.customFolderSuffix]
+label = "استخدام لاحقة مجلد مخصصة"
+description = "إلحاق معرّف الدردشة بمجلدات الملفات الواردة لعزل الرفع لكل دردشة."
+
+[admin.settings.telegram.accessControl]
+title = "التحكم بالوصول"
+description = "تقييد المستخدمين أو القنوات التي يمكنها التفاعل مع الروبوت."
+
+[admin.settings.telegram.enableAllowUserIDs]
+label = "السماح بمعرفات مستخدم محددة"
+description = "عند التمكين، يمكن فقط لمعرفات المستخدم المدرجة استخدام الروبوت."
+
+[admin.settings.telegram.allowUserIDs]
+label = "معرّفات المستخدم المسموح بها"
+description = "أدخل معرّفات مستخدم Telegram المسموح لها بالتفاعل مع الروبوت."
+placeholder = "أضف معرّف مستخدم واضغط إدخال"
+
+[admin.settings.telegram.enableAllowChannelIDs]
+label = "السماح بمعرفات قنوات محددة"
+description = "عند التمكين، يمكن فقط لمعرفات القنوات المدرجة استخدام الروبوت."
+
+[admin.settings.telegram.allowChannelIDs]
+label = "معرّفات القنوات المسموح بها"
+description = "أدخل معرّفات قنوات Telegram المسموح لها بالتفاعل مع الروبوت."
+placeholder = "أضف معرّف قناة واضغط إدخال"
+
+[admin.settings.telegram.processing]
+title = "المعالجة"
+description = "التحكم بفواصل الاستطلاع ومهلات المعالجة لعمليات الرفع عبر Telegram."
+
+[admin.settings.telegram.processingTimeoutSeconds]
+label = "مهلة المعالجة (ثوانٍ)"
+description = "المدة القصوى لانتظار مهمة معالجة قبل الإبلاغ عن خطأ."
+
+[admin.settings.telegram.pollingIntervalMillis]
+label = "فاصل الاستطلاع (مللي ثانية)"
+description = "الفاصل بين التحقق من تحديثات Telegram الجديدة."
+
+[admin.settings.telegram.feedback]
+title = "رسائل التغذية الراجعة"
+description = "اختر متى يجب أن يرسل الروبوت رسائل تغذية راجعة للمستخدمين والقنوات."
+
+[admin.settings.telegram.feedback.general.enabled]
+label = "تمكين التغذية الراجعة"
+description = "التحكم فيما إذا كان الروبوت يرسل رسائل تغذية راجعة من عدمه."
+
+[admin.settings.telegram.feedback.channel]
+title = "قواعد تغذية القنوات"
+
+[admin.settings.telegram.feedback.channel.noValidDocument]
+label = "إظهار \"لا يوجد مستند صالح\" (القناة)"
+description = "إخفاء رد عدم وجود مستند صالح لرفع القنوات."
+
+[admin.settings.telegram.feedback.channel.errorProcessing]
+label = "إظهار أخطاء المعالجة (القناة)"
+description = "إرسال رسائل أخطاء المعالجة إلى القنوات."
+
+[admin.settings.telegram.feedback.channel.errorMessage]
+label = "إظهار رسائل الخطأ (القناة)"
+description = "إظهار رسائل خطأ مفصّلة للقنوات."
+
+[admin.settings.telegram.feedback.user]
+title = "قواعد تغذية المستخدم"
+
+[admin.settings.telegram.feedback.user.noValidDocument]
+label = "إظهار \"لا يوجد مستند صالح\" (المستخدم)"
+description = "إخفاء رد عدم وجود مستند صالح لرفع المستخدمين."
+
+[admin.settings.telegram.feedback.user.errorProcessing]
+label = "إظهار أخطاء المعالجة (المستخدم)"
+description = "إرسال رسائل أخطاء المعالجة إلى المستخدمين."
+
+[admin.settings.telegram.feedback.user.errorMessage]
+label = "إظهار رسائل الخطأ (المستخدم)"
+description = "إظهار رسائل خطأ مفصّلة للمستخدمين."
 
 [admin.settings.database]
 title = "قاعدة البيانات"
@@ -4484,6 +4947,10 @@ description = "السماح للمسؤولين بدعوة المستخدمين �
 [admin.settings.mail.frontendUrl]
 label = "عنوان URL للواجهة الأمامية"
 description = "عنوان URL الأساسي للواجهة الأمامية (مثال: https://pdf.example.com). يُستخدم لإنشاء روابط الدعوة في الرسائل. اتركه فارغًا لاستخدام عنوان URL للواجهة الخلفية."
+
+[admin.settings.mail.frontendUrlNote]
+note = "ملاحظة: يتطلب تكوين عنوان URL للواجهة الأمامية. "
+link = "الضبط في إعدادات النظام"
 
 [admin.settings.legal]
 title = "الوثائق القانونية"
@@ -4669,6 +5136,9 @@ googleDriveShort = "Drive"
 myFiles = "ملفاتي"
 noRecentFiles = "لم يتم العثور على ملفات حديثة"
 googleDriveNotAvailable = "تكامل Google Drive غير متاح"
+mobileUpload = "رفع من الهاتف المحمول"
+mobileShort = "الهاتف"
+mobileUploadNotAvailable = "الرفع من الهاتف غير مُمكّن"
 downloadSelected = "تنزيل المحدّد"
 saveSelected = "حفظ المحدد"
 openFiles = "فتح ملفات"
@@ -4984,6 +5454,7 @@ loading = "جارٍ التحميل..."
 back = "رجوع"
 continue = "متابعة"
 error = "خطأ"
+save = "حفظ"
 
 [config.overview]
 title = "تهيئة التطبيق"
@@ -5045,6 +5516,15 @@ warning = "⚠️ تحذير: سيؤدي هذا الإجراء إلى إنشاء
 impact = "أي تطبيقات أو خدمات تستخدم هذه المفاتيح ستتوقف عن العمل حتى تحدّثها بالمفاتيح الجديدة."
 confirmPrompt = "هل أنت متأكد أنك تريد المتابعة؟"
 confirmCta = "تحديث المفاتيح"
+
+[config.apiKeys.alert]
+apiKeyErrorTitle = "خطأ في مفتاح API"
+failedToCreateApiKey = "فشل إنشاء مفتاح API."
+failedToRetrieveApiKey = "تعذّر جلب مفتاح API من الاستجابة."
+failedToFetchApiKey = "تعذّر جلب مفتاح API."
+apiKeyRefreshed = "تم تحديث مفتاح API"
+apiKeyRefreshedBody = "تم تحديث مفتاح API الخاص بك بنجاح."
+failedToRefreshApiKey = "فشل تحديث مفتاح API."
 
 [AddAttachmentsRequest]
 attachments = "اختر المرفقات"
@@ -5150,6 +5630,16 @@ finish = "إنهاء"
 startTour = "بدء الجولة"
 startTourDescription = "قم بجولة إرشادية للتعرّف على الميزات الرئيسية في Stirling PDF"
 
+[onboarding.whatsNew]
+quickAccess = "ابدأ من شريط <strong>الوصول السريع</strong> للتنقل بين Reader وAutomate وملفاتك وكل الجولات."
+leftPanel = "يعرض اللوح الأيسر <strong>الأدوات</strong> كل ما يمكنك فعله. تصفّح الفئات أو ابحث للعثور على أداة بسرعة."
+fileUpload = "استخدم زر <strong>الملفات</strong> لرفع أو اختيار PDF حديث. سنحمّل نموذجًا كي ترى مساحة العمل."
+rightRail = "يحتوي <strong>الشريط الأيمن</strong> على إجراءات سريعة لاختيار الملفات وتغيير السمة أو اللغة وتنزيل النتائج."
+topBar = "يتيح لك الشريط العلوي التبديل بين <strong>العارض</strong> و<strong>محرر الصفحات</strong> و<strong>الملفات النشطة</strong>."
+pageEditorView = "بدّل إلى محرر الصفحات لإعادة الترتيب أو التدوير أو حذف الصفحات."
+activeFilesView = "استخدم الملفات النشطة لرؤية كل ما فتحته واختيار ما ستعمل عليه."
+wrapUp = "هذا ما هو جديد في V2. افتح قائمة <strong>الجولات</strong> في أي وقت لإعادة تشغيل هذه الجولة أو جولة الأدوات أو جولة المسؤول."
+
 [onboarding.welcomeModal]
 title = "مرحبًا بك في Stirling PDF!"
 description = "هل ترغب في جولة سريعة لمدة دقيقة للتعرّف على الميزات الرئيسية وكيفية البدء؟"
@@ -5170,6 +5660,10 @@ download = "تنزيل →"
 showMeAround = "أرني الجولة"
 skipTheTour = "تخطي الجولة"
 
+[onboarding.tourOverview]
+title = "نظرة عامة على الجولة"
+body = "تأتي Stirling PDF V2 بعشرات الأدوات وتصميم مُحدَّث. خذ جولة سريعة لترى ما الذي تغيّر وأين تجد الميزات التي تحتاجها."
+
 [onboarding.serverLicense]
 skip = "تخطي الآن"
 seePlans = "عرض الخطط →"
@@ -5177,7 +5671,7 @@ upgrade = "الترقية الآن →"
 freeTitle = "ترخيص الخادم"
 overLimitTitle = "مطلوب ترخيص خادم"
 overLimitBody = "ترخيصنا يسمح حتى <strong>{{freeTierLimit}}</strong> مستخدمين مجاناً لكل خادم. لديك <strong>{{overLimitUserCopy}}</strong> مستخدمي Stirling. للمتابعة دون انقطاع، ارقَ إلى خطة خادم Stirling - <strong>مقاعد غير محدودة</strong>، تحرير نصوص PDF، وتحكم إداري كامل مقابل $99/خادم/شهرياً."
-freeBody = "يتيح ترخيصنا <strong>Open-Core</strong> ما يصل إلى <strong>{{freeTierLimit}}</strong> مستخدمًا مجانًا لكل خادم. للتوسع دون انقطاع، نوصي بخطة Stirling Server - <strong>مقاعد غير محدودة</strong> و<strong>دعم SSO</strong> مقابل $99/server/mo."
+freeBody = "ترخيص <strong>Open-Core</strong> لدينا يسمح حتى <strong>{{freeTierLimit}}</strong> مستخدمين مجاناً لكل خادم. للتوسع بسلاسة والحصول على وصول مبكر إلى <strong>أداة تحرير نصوص PDF</strong> الجديدة، نوصي بخطة خادم Stirling - تحرير كامل و<strong>مقاعد غير محدودة</strong> مقابل $99/خادم/شهرياً."
 
 [onboarding.desktopInstall]
 title = "تنزيل"
@@ -5281,6 +5775,31 @@ error = "فشل تحديث حالة المستخدم"
 [workspace.people.delete]
 success = "تم حذف المستخدم بنجاح"
 error = "فشل حذف المستخدم"
+
+[workspace.people.changePassword]
+action = "تغيير كلمة المرور"
+title = "تغيير كلمة المرور"
+subtitle = "تحديث كلمة المرور لـ"
+newPassword = "كلمة مرور جديدة"
+confirmPassword = "تأكيد كلمة المرور"
+placeholder = "أدخل كلمة مرور جديدة"
+confirmPlaceholder = "أعد إدخال كلمة المرور الجديدة"
+passwordRequired = "يرجى إدخال كلمة مرور جديدة"
+passwordMismatch = "كلمتا المرور غير متطابقتين"
+generateRandom = "إنشاء كلمة مرور آمنة"
+generatedPreview = "كلمة المرور المُنشأة:"
+copyTooltip = "نسخ إلى الحافظة"
+copiedToClipboard = "تم نسخ كلمة المرور إلى الحافظة"
+copyFailed = "فشل نسخ كلمة المرور"
+sendEmail = "إرسال بريد إلكتروني للمستخدم حول هذا التغيير"
+includePassword = "تضمين كلمة المرور الجديدة في البريد الإلكتروني"
+forcePasswordChange = "إلزام المستخدم بتغيير كلمة المرور عند تسجيل الدخول التالي"
+emailUnavailable = "بريد هذا المستخدم الإلكتروني غير صالح. تم تعطيل الإشعارات."
+smtpDisabled = "تتطلب إشعارات البريد الإلكتروني تفعيل SMTP في الإعدادات."
+notifyOnly = "سيتم إرسال بريد إلكتروني بدون كلمة المرور لإبلاغ المستخدم بأن المشرف قد غيّرها."
+submit = "تحديث كلمة المرور"
+success = "تم تحديث كلمة المرور بنجاح"
+error = "فشل تحديث كلمة المرور"
 
 [workspace.people.emailInvite]
 tab = "دعوة عبر البريد الإلكتروني"
@@ -5458,6 +5977,28 @@ contactSales = "اتصل بالمبيعات"
 contactToUpgrade = "اتصل بنا للترقية أو تخصيص خطتك"
 maxUsers = "الحد الأقصى للمستخدمين"
 upTo = "حتى"
+getLicense = "الحصول على ترخيص الخادم"
+upgradeToEnterprise = "الترقية إلى Enterprise"
+selectPeriod = "اختيار فترة الفوترة"
+monthlyBilling = "فوترة شهرية"
+yearlyBilling = "فوترة سنوية"
+checkoutOpened = "تم فتح صفحة الدفع"
+checkoutInstructions = "أكمل عملية الشراء في تبويب Stripe. بعد الدفع، ارجع إلى هنا وحدّث الصفحة لتفعيل ترخيصك. ستتلقى أيضًا بريدًا إلكترونيًا يحتوي على مفتاح الترخيص."
+activateLicense = "فعِّل ترخيصك"
+
+[plan.static.licenseActivation]
+checkoutOpened = "تم فتح الدفع في تبويب جديد"
+instructions = "أكمل عملية الشراء في تبويب Stripe. عند اكتمال الدفع، ستتلقى بريدًا إلكترونيًا يحتوي على مفتاح الترخيص."
+enterKey = "أدخل مفتاح الترخيص أدناه لتفعيل خطتك:"
+keyDescription = "الصق مفتاح الترخيص من بريدك الإلكتروني"
+activate = "تفعيل الترخيص"
+doLater = "سأفعل ذلك لاحقًا"
+success = "تم تفعيل الترخيص!"
+successMessage = "تم تفعيل ترخيصك بنجاح. يمكنك الآن إغلاق هذه النافذة."
+
+[plan.static.billingPortal]
+title = "مطلوب التحقق من البريد الإلكتروني"
+message = "ستحتاج إلى التحقق من عنوان بريدك الإلكتروني في بوابة فوترة Stripe. تحقق من بريدك للحصول على رابط تسجيل الدخول."
 
 [plan.period]
 month = "شهر"
@@ -5661,6 +6202,8 @@ notAvailable = "نظام التدقيق غير متاح"
 notAvailableMessage = "لم يتم تهيئة نظام التدقيق أو أنه غير متاح."
 disabled = "تم تعطيل تسجيل التدقيق"
 disabledMessage = "قم بتمكين تسجيل التدقيق في إعدادات التطبيق لتتبع أحداث النظام."
+enterpriseRequired = "يتطلب ترخيص Enterprise"
+enterpriseRequiredMessage = "نظام سجلات التدقيق ميزة ضمن فئة Enterprise. يرجى الترقية إلى ترخيص Enterprise للوصول إلى سجلات التدقيق والتحليلات."
 
 [audit.error]
 title = "خطأ في تحميل نظام التدقيق"
@@ -5815,6 +6358,7 @@ subtitle = "سجّل الدخول بحساب Stirling الخاص بك"
 [setup.selfhosted]
 title = "سجّل الدخول إلى الخادم"
 subtitle = "أدخل بيانات اعتماد الخادم"
+link = "أو الاتصال بحساب مُستضاف ذاتيًا"
 
 [setup.server]
 title = "الاتصال بالخادم"
@@ -5831,8 +6375,17 @@ description = "أدخل عنوان URL الكامل لخادم Stirling PDF ال
 
 [setup.server.error]
 emptyUrl = "يرجى إدخال عنوان URL للخادم"
+invalidUrl = "صيغة URL غير صالحة. يرجى إدخال عنوان URL صالح مثل https://your-server.com"
 unreachable = "تعذّر الاتصال بالخادم"
 testFailed = "فشل اختبار الاتصال"
+configFetch = "فشل في جلب إعدادات الخادم. يرجى التحقق من عنوان URL والمحاولة مرة أخرى."
+
+[setup.server.error.securityDisabled]
+title = "تسجيل الدخول غير مفعّل"
+body = "لا يحتوي هذا الخادم على تسجيل دخول مفعّل. للاتصال بهذا الخادم، يجب تمكين المصادقة:"
+step1 = "عيّن DOCKER_ENABLE_SECURITY=true في بيئتك"
+step2 = "أو عيّن security.enableLogin=true في settings.yml"
+step3 = "أعد تشغيل الخادم"
 
 [setup.login]
 title = "تسجيل الدخول"
@@ -5841,6 +6394,7 @@ connectingTo = "جارٍ الاتصال بـ:"
 submit = "تسجيل الدخول"
 signInWith = "تسجيل الدخول باستخدام"
 oauthPending = "جارٍ فتح المتصفح للمصادقة..."
+sso = "تسجيل الدخول الموحد"
 orContinueWith = "أو المتابعة بالبريد الإلكتروني"
 serverRequirement = "ملاحظة: يجب أن يكون تسجيل الدخول مفعّلاً على الخادم."
 showInstructions = "كيفية التمكين؟"
@@ -5905,6 +6459,9 @@ earlyAccess = "وصول مبكر"
 reset = "إعادة تعيين التغييرات"
 downloadJson = "تنزيل JSON"
 generatePdf = "توليد PDF"
+saveChanges = "حفظ التغييرات"
+applyChanges = "تطبيق التغييرات"
+downloadCopy = "تنزيل نسخة"
 
 [pdfTextEditor.options.autoScaleText]
 title = "ضبط النص تلقائياً ليتناسب مع الصناديق"
@@ -5922,6 +6479,24 @@ descriptionInline = "نصيحة: اضغط Ctrl (Cmd) أو Shift لتحديد ع�
 [pdfTextEditor.options.forceSingleElement]
 title = "قفل النص المُحرّر ضمن عنصر PDF واحد"
 description = "عند التفعيل، يصدّر المحرر كل صندوق نص مُحرّر كعنصر نص PDF واحد لتجنب تراكب المحارف أو اختلاط الخطوط."
+
+[pdfTextEditor.options.advanced]
+title = "إعدادات متقدمة"
+
+[pdfTextEditor.tooltip.header]
+title = "قيود المعاينة"
+
+[pdfTextEditor.tooltip.textFocus]
+title = "تركيز النص والصورة"
+text = "يركّز هذا المجال على تحرير النص وإعادة تموضع الصور المضمّنة. ستُحفَظ الأعمال الفنية المعقّدة وعناصر النماذج والرسومات الطبقية للتصدير لكنها غير قابلة للتحرير بالكامل هنا."
+
+[pdfTextEditor.tooltip.previewVariance]
+title = "اختلاف المعاينة"
+text = "قد لا تظهر بعض العناصر البصرية (مثل حدود الجداول أو الأشكال أو مظهر التعليقات) تمامًا كما هي في المعاينة. يحتفظ PDF المُصدَّر بأوامر الرسم الأصلية كلما أمكن."
+
+[pdfTextEditor.tooltip.alpha]
+title = "عارض ألفا"
+text = "هذا العارض الألفا ما يزال قيد التطوير—قد تتغيّر بعض الخطوط والألوان وتأثيرات الشفافية وتفاصيل التخطيط قليلًا. يرجى التحقق من ملف PDF المُولَّد قبل المشاركة."
 
 [pdfTextEditor.manual]
 mergeTooltip = "دمج الصناديق المحددة"
@@ -5942,6 +6517,8 @@ alpha = "هذا العارض بنسخة ألفا ولا يزال يتطور—ق
 [pdfTextEditor.empty]
 title = "لم يتم تحميل مستند"
 subtitle = "حمّل ملف PDF أو JSON لبدء تحرير محتوى النص."
+dropzone = "اسحب وأفلت ملف PDF أو JSON هنا، أو انقر للاستعراض"
+dropzoneWithFiles = "حدد ملفًا من علامة تبويب الملفات، أو اسحب وأفلت ملف PDF أو JSON هنا، أو انقر للاستعراض"
 
 [pdfTextEditor.welcomeBanner]
 title = "مرحباً بك في محرر نصوص PDF (وصول مبكر)"
@@ -6042,3 +6619,58 @@ title = "نتائج إضافة النص"
 
 [addText.error]
 failed = "حدث خطأ أثناء إضافة النص إلى ملف PDF."
+
+[mobileUpload]
+title = "رفع من الهاتف المحمول"
+description = "امسح ضوئيًا لرفع الصور. تتحول الصور تلقائيًا إلى PDF."
+descriptionNoConvert = "امسح ضوئيًا لرفع الصور من جهازك المحمول."
+error = "خطأ في الاتصال"
+pollingError = "خطأ أثناء التحقق من الملفات"
+sessionId = "معرّف الجلسة"
+sessionCreateError = "فشل إنشاء الجلسة"
+expiryWarning = "ستنتهي صلاحية الجلسة قريبًا"
+expiryWarningMessage = "ستنتهي صلاحية رمز QR هذا خلال {{seconds}} ثانية. سيتم توليد رمز جديد تلقائيًا."
+filesReceived = "تم استلام {{count}} ملف"
+connected = "تم توصيل الجهاز المحمول"
+instructions = "امسح باستخدام كاميرا هاتفك. تُحوَّل الصور إلى PDF تلقائيًا."
+instructionsNoConvert = "امسح باستخدام كاميرا هاتفك لرفع الملفات."
+
+[mobileScanner]
+title = "الماسح عبر الهاتف"
+noSession = "جلسة غير صالحة"
+noSessionMessage = "يرجى مسح رمز QR صالح للوصول إلى هذه الصفحة."
+validating = "جارٍ التحقق من الجلسة..."
+sessionInvalid = "خطأ في الجلسة"
+sessionExpired = "انتهت صلاحية هذه الجلسة. يرجى التحديث والمحاولة مرة أخرى."
+sessionNotFound = "الجلسة غير موجودة. يرجى التحديث والمحاولة مرة أخرى."
+sessionValidationError = "تعذّر التحقق من الجلسة. يرجى المحاولة مرة أخرى."
+uploadSuccess = "تم الرفع بنجاح!"
+uploadSuccessMessage = "تم نقل صورك."
+httpsRequired = "يتطلب الوصول إلى الكاميرا HTTPS أو localhost. يرجى استخدام HTTPS أو الوصول عبر localhost."
+uploadFailed = "فشل الرفع. يرجى المحاولة مرة أخرى."
+uploading = "جارٍ الرفع..."
+connected = "متصل"
+connecting = "جارٍ الاتصال..."
+chooseMethod = "اختر طريقة الرفع"
+chooseMethodDescription = "حدّد كيف تريد مسح المستندات ورفعها"
+camera = "الكاميرا"
+cameraDescription = "امسح المستندات بكاميرا جهازك مع اكتشاف تلقائي للحواف"
+fileUpload = "رفع ملف"
+fileDescription = "ارفع صورًا أو مستندات موجودة من جهازك"
+cameraAccessDenied = "تم رفض الوصول إلى الكاميرا. يرجى تمكين الوصول إلى الكاميرا."
+back = "رجوع"
+settings = "الإعدادات"
+edgeDetection = "اكتشاف الحواف"
+flashlight = "المصباح"
+flash = "فلاش"
+processing = "جارٍ المعالجة..."
+capture = "التقاط صورة"
+selectFilesPrompt = "اختر الملفات للرفع"
+selectImage = "اختر صورة"
+preview = "معاينة"
+retake = "إعادة الالتقاط"
+addToBatch = "إضافة إلى الدفعة"
+upload = "رفع"
+batchImages = "دفعة"
+clearBatch = "مسح"
+uploadAll = "رفع الكل"

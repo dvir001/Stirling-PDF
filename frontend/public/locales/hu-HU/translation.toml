@@ -1,8 +1,11 @@
 unsavedChanges = "Mentetlen változtatásai vannak a PDF-en."
+pendingRedactionsTitle = "Nem alkalmazott kitakarások"
+pendingRedactions = "Vannak nem alkalmazott kitakarásai, amelyek el fognak veszni."
 areYouSure = "Biztosan elhagyja az oldalt?"
 unsavedChangesTitle = "Mentetlen változtatások"
 keepWorking = "Munka folytatása"
 discardChanges = "Elvetés és kilépés"
+discardRedactions = "Elvetés és kilépés"
 applyAndContinue = "Mentés és kilépés"
 exportAndContinue = "Exportálás és folytatás"
 cancel = "Mégse"
@@ -340,6 +343,10 @@ advance = "Haladó"
 edit = "Megtekintés és szerkesztés"
 popular = "Népszerű"
 
+[footer]
+discord = "Discord"
+issues = "GitHub"
+
 [settings.preferences]
 title = "Beállítások"
 
@@ -360,6 +367,7 @@ advanced = "Speciális"
 title = "Biztonság és hitelesítés"
 security = "Biztonság"
 connections = "Kapcsolatok"
+telegram = "Telegram"
 
 [settings.licensingAnalytics]
 title = "Licencelés és analitika"
@@ -434,6 +442,32 @@ currentVersion = "Jelenlegi verzió"
 latestVersion = "Legújabb verzió"
 checkForUpdates = "Frissítések keresése"
 viewDetails = "Részletek megtekintése"
+serverNeedsUpdate = "A szervert az adminisztrátornak frissítenie kell"
+
+[settings.general.versionInfo]
+title = "Verzióinformációk"
+description = "Asztali és szerververzió adatai"
+desktop = "Asztali verzió"
+server = "Szerververzió"
+
+[settings.security]
+title = "Biztonság"
+description = "Frissítse jelszavát fiókja biztonságáért."
+
+[settings.security.password]
+subtitle = "Jelszó módosítása. A frissítés után ki lesz jelentkeztetve."
+required = "Minden mező kitöltése kötelező."
+mismatch = "Az új jelszavak nem egyeznek."
+error = "Nem sikerült frissíteni a jelszót. Ellenőrizze jelenlegi jelszavát, és próbálja újra."
+success = "A jelszó sikeresen frissült. Jelentkezzen be újra."
+ssoDisabled = "A jelszóváltoztatást az identitásszolgáltató kezeli."
+current = "Jelenlegi jelszó"
+currentPlaceholder = "Adja meg jelenlegi jelszavát"
+new = "Új jelszó"
+newPlaceholder = "Adjon meg egy új jelszót"
+confirm = "Új jelszó megerősítése"
+confirmPlaceholder = "Írja be újra az új jelszót"
+update = "Jelszó frissítése"
 
 [settings.hotkeys]
 title = "Billentyűparancsok"
@@ -488,11 +522,16 @@ low = "Alacsony"
 title = "Hitelesítési adatok módosítása"
 header = "Fiókadatok frissítése"
 changePassword = "Az alapértelmezett bejelentkezési adatokat használja. Kérjük, adjon meg új jelszót"
+ssoManaged = "Fiókját az identitásszolgáltató kezeli."
 newUsername = "Új felhasználónév"
 oldPassword = "Jelenlegi jelszó"
 newPassword = "Új jelszó"
 confirmNewPassword = "Új jelszó megerősítése"
 submit = "Változtatások mentése"
+credsUpdated = "Fiók frissítve"
+description = "A módosítások mentve. Kérjük, jelentkezzen be újra."
+error = "Nem sikerült frissíteni a felhasználónevet. Ellenőrizze a jelszavát, és próbálja újra."
+changeUsername = "Felhasználónév frissítése. A frissítés után ki lesz jelentkeztetve."
 
 [account]
 title = "Fiókbeállítások"
@@ -500,6 +539,8 @@ accountSettings = "Fiókbeállítások"
 adminSettings = "Rendszergazdai beállítások - Felhasználók kezelése"
 userControlSettings = "Felhasználói jogosultságok"
 changeUsername = "Felhasználónév módosítása"
+changeUsernameDescription = "Felhasználónév frissítése. A frissítés után ki lesz jelentkeztetve."
+newUsernamePlaceholder = "Adja meg az új felhasználónevét"
 newUsername = "Új felhasználónév"
 password = "Jelszó megerősítése"
 oldPassword = "Régi jelszó"
@@ -707,6 +748,11 @@ desc = "Szkennelt fényképek felismerése és külön oldalakra vágása"
 tags = "aláírás,szignó"
 title = "Aláírás"
 desc = "Aláírás hozzáadása PDF-hez rajzolással, szöveggel vagy képpel"
+
+[home.annotate]
+tags = "jegyzetelés,kiemelés,rajzolás"
+title = "Jegyzetelés"
+desc = "Kiemelés, rajzolás, jegyzetek és alakzatok hozzáadása a megjelenítőben"
 
 [home.flatten]
 tags = "egyszerűsít,eltávolít,interaktív"
@@ -919,7 +965,7 @@ title = "PDF-ek egymásra helyezése"
 
 [home.pdfTextEditor]
 title = "PDF szövegszerkesztő"
-desc = "Meglévő szöveg és képek szerkesztése a PDF-ekben"
+desc = "Nézze át és szerkessze a Stirling PDF JSON exportokat csoportosított szövegszerkesztéssel és PDF-újragenerálással"
 
 [home.addText]
 tags = "szöveg, megjegyzés, címke"
@@ -930,6 +976,7 @@ desc = "Tetszőleges szöveg hozzáadása bárhová a PDF-ben"
 addFiles = "Fájlok hozzáadása"
 uploadFromComputer = "Feltöltés a számítógépről"
 openFromComputer = "Megnyitás a gépről"
+mobileUpload = "Feltöltés mobilról"
 
 [viewPdf]
 tags = "megtekintés,olvasás,jegyzetelés,szöveg,kép"
@@ -1245,6 +1292,37 @@ cbzOptions = "CBZ to PDF beállítások"
 optimizeForEbook = "PDF optimalizálása e-könyv olvasókhoz (Ghostscript használatával)"
 cbzOutputOptions = "PDF to CBZ beállítások"
 cbzDpi = "DPI a képrendereléshez"
+cbrOptions = "CBR beállítások"
+cbrOutputOptions = "PDF → CBR beállítások"
+cbrDpi = "DPI a képrendereléshez"
+svgPdfOptions = "SVG to PDF Options"
+combineSvgs = "Combine SVGs into single PDF"
+combineSvgsDescription = "Combine all SVG files into one PDF with multiple pages, or create separate PDFs for each SVG"
+svgVectorNote = "SVG files are rendered as vector graphics for crisp output at any resolution. Dimensions from the SVG determine the PDF page size."
+
+[convert.ebookOptions]
+ebookOptions = "E-könyv → PDF beállítások"
+ebookOptionsDesc = "E-könyvek PDF-be konvertálásának beállításai"
+embedAllFonts = "Összes betűtípus beágyazása"
+embedAllFontsDesc = "Az e-könyv összes betűtípusának beágyazása a létrehozott PDF-be"
+includeTableOfContents = "Tartalomjegyzék hozzáadása"
+includeTableOfContentsDesc = "Létrehozott tartalomjegyzék hozzáadása a kész PDF-hez"
+includePageNumbers = "Oldalszámok hozzáadása"
+includePageNumbersDesc = "Oldalszámok hozzáadása a létrehozott PDF-hez"
+optimizeForEbookPdf = "Optimalizálás e-könyv olvasókhoz"
+optimizeForEbookPdfDesc = "A PDF optimalizálása e-könyv olvasáshoz (kisebb fájlméret, jobb megjelenítés e-ink eszközökön)"
+
+[convert.epubOptions]
+epubOptions = "PDF → e-könyv beállítások"
+epubOptionsDesc = "Beállítások PDF EPUB/AZW3 formátumba konvertálásához"
+detectChapters = "Fejezetek felismerése"
+detectChaptersDesc = "A fejezeteknek tűnő címsorok felismerése és EPUB oldaltörések beszúrása"
+targetDevice = "Cél eszköz"
+targetDeviceDesc = "A felhasználói eszközhöz optimalizált kimeneti profil kiválasztása"
+outputFormat = "Kimeneti formátum"
+outputFormatDesc = "Válassza ki az e-könyv kimeneti formátumát"
+tabletPhone = "Tablet/Telefon (képekkel)"
+kindleEink = "Kindle e-Ink (szöveghez optimalizált)"
 
 [imageToPdf]
 tags = "konverzió,kép,jpg,fotó,fénykép"
@@ -1322,6 +1400,7 @@ applySignatures = "Képek alkalmazása"
 name = "Kép"
 placeholder = "Töltsön fel egy képet"
 label = "Képfájl"
+hint = "Supports PNG, JPEG, GIF, BMP, TIFF, and SVG files. SVG files will be converted to PNG for embedding."
 
 [addImage.steps]
 configure = "Kép beállítása"
@@ -1361,6 +1440,11 @@ header = "Mellékletek hozzáadása"
 add = "Melléklet hozzáadása"
 remove = "Melléklet eltávolítása"
 embed = "Melléklet beágyazása"
+convertToPdfA3b = "Átalakítás PDF/A-3b formátumba"
+convertToPdfA3bDescription = "Beágyazott mellékleteket tartalmazó archiválási PDF-et hoz létre"
+convertToPdfA3bTooltip = "A PDF/A-3b egy archiválási formátum, amely biztosítja a hosszú távú megőrzést. Lehetővé teszi tetszőleges fájlformátumok mellékletként történő beágyazását. Az átalakításhoz Ghostscript szükséges, és nagy fájloknál hosszabb ideig tarthat."
+convertToPdfA3bTooltipHeader = "A PDF/A-3b átalakításról"
+convertToPdfA3bTooltipTitle = "Mit csinál"
 submit = "Csatolmányok hozzáadása a PDF-hez"
 
 [watermark]
@@ -2306,6 +2390,10 @@ saved = "Mentett"
 label = "Aláíráskép feltöltése"
 placeholder = "Képfájl kiválasztása"
 hint = "Töltse fel az aláírását tartalmazó PNG vagy JPG képet"
+removeBackground = "Fehér háttér eltávolítása (átlátszóvá tétel)"
+processing = "Kép feldolgozása..."
+backgroundRemovalFailedTitle = "A háttér eltávolítása nem sikerült"
+backgroundRemovalFailedMessage = "Nem sikerült eltávolítani a háttért a képről. Az eredeti képet használjuk helyette."
 
 [sign.instructions]
 title = "Hogyan adjon hozzá aláírást"
@@ -2350,6 +2438,11 @@ note = "A lapítás eltávolítja az interaktív elemeket a PDF-ből, így azok 
 [flatten.options.flattenOnlyForms]
 label = "Csak űrlapok lapítása"
 desc = "Csak az űrlapmezők lapítása, a többi interaktív elem változatlanul marad"
+
+[flatten.renderDpi]
+label = "Renderelési DPI (nem kötelező, ajánlott 150 DPI)"
+help = "Hagyja üresen a rendszer alapértékének használatához. A magasabb DPI élesebb kimenetet ad, de növeli a feldolgozási időt és a fájlméretet."
+placeholder = "pl. 150"
 
 [flatten.results]
 title = "Lapítás eredménye"
@@ -2925,6 +3018,7 @@ header = "PDF vágása"
 submit = "Küldés"
 noFileSelected = "Válasszon egy PDF-fájlt a vágás megkezdéséhez"
 reset = "Visszaállítás teljes PDF-re"
+autoCrop = "Üres terület automatikus levágása"
 
 [crop.preview]
 title = "Vágási terület kiválasztása"
@@ -3036,6 +3130,91 @@ title = "PDF információk lekérése"
 header = "PDF információk lekérése"
 submit = "Információk lekérése"
 downloadJson = "JSON letöltése"
+processing = "Információk kinyerése..."
+results = "Eredmények"
+noResults = "Futtassa az eszközt a jelentés létrehozásához."
+downloads = "Letöltések"
+noneDetected = "Nem található"
+indexTitle = "Index"
+
+[getPdfInfo.report]
+entryLabel = "Teljes információs összefoglaló"
+shortTitle = "PDF-információk"
+
+[getPdfInfo.sections]
+metadata = "Metaadatok"
+formFields = "Űrlapmezők"
+basicInfo = "Alapinformációk"
+documentInfo = "Dokumentuminformációk"
+compliance = "Megfelelőség"
+encryption = "Titkosítás"
+permissions = "Engedélyek"
+other = "Egyéb"
+perPageInfo = "Oldalankénti információk"
+tableOfContents = "Tartalomjegyzék"
+
+[getPdfInfo.other]
+attachments = "Mellékletek"
+embeddedFiles = "Beágyazott fájlok"
+javaScript = "JavaScript"
+layers = "Rétegek"
+structureTree = "Struktúrafa"
+xmp = "XMPMetadata"
+
+[getPdfInfo.perPage]
+size = "Méret"
+annotations = "Megjegyzések"
+images = "Képek"
+links = "Hivatkozások"
+fonts = "Betűtípusok"
+xobjects = "XObject-ek száma"
+multimedia = "Multimédia"
+
+[getPdfInfo.summary]
+pages = "Oldalak"
+fileSize = "Fájlméret"
+pdfVersion = "PDF-verzió"
+language = "Nyelv"
+title = "PDF-összefoglaló"
+author = "Szerző"
+created = "Létrehozva"
+modified = "Módosítva"
+permsAll = "Minden jogosultság engedélyezve"
+permsRestricted = "{{count}} korlátozás"
+permsMixed = "Néhány jogosultság korlátozott"
+hasCompliance = "Megfelelőségi szabványokkal rendelkezik"
+noCompliance = "Nincsenek megfelelőségi szabványok"
+basic = "Alapinformációk"
+documentInfo = "Dokumentuminformációk"
+securityTitle = "Biztonsági állapot"
+technical = "Technikai"
+overviewTitle = "PDF-áttekintés"
+
+[getPdfInfo.summary.security]
+encrypted = "Titkosított PDF – jelszóvédelemmel"
+unencrypted = "Titkosítatlan PDF – nincs jelszóvédelem"
+
+[getPdfInfo.summary.tech]
+images = "Képek"
+fonts = "Betűtípusok"
+formFields = "Űrlapmezők"
+embeddedFiles = "Beágyazott fájlok"
+javaScript = "JavaScript"
+layers = "Rétegek"
+bookmarks = "Könyvjelzők"
+multimedia = "Multimédia"
+
+[getPdfInfo.summary.overview]
+untitled = "egy cím nélküli dokumentum"
+unknown = "Ismeretlen szerző"
+text = "Ez egy {{pages}} oldalas, {{title}} című PDF, amelyet {{author}} készített (PDF-verzió: {{version}})."
+
+[getPdfInfo.error]
+partial = "Néhány fájlt nem sikerült feldolgozni."
+unexpected = "Váratlan hiba a kinyerés során."
+
+[getPdfInfo.status]
+complete = "Kinyerés befejezve"
 
 [extractPage]
 tags = "kinyerés"
@@ -3070,6 +3249,7 @@ title = "Kitakarási mód"
 mode = "Mód"
 automatic = "Automatikus"
 automaticDesc = "Szöveg kitakarása keresési feltételek alapján"
+automaticDisabledTooltip = "Válasszon fájlokat a fájlkezelőben több fájl egyidejű kitakarásához"
 manual = "Kézi"
 manualDesc = "Kattintson és húzza a kitakarni kívánt terület kijelöléséhez"
 manualComingSoon = "A kézi kitakarás hamarosan elérhető"
@@ -3140,8 +3320,35 @@ text = "Csak a teljes szavakat illeszti, nem részleges egyezéseket. Engedélye
 title = "Konvertálás PDF-Image formátumra"
 text = "A kitakarás után a PDF-et képalapú PDF-fé alakítja. Ez biztosítja, hogy a kitakaró dobozok mögötti szöveg teljesen eltávolításra kerüljön és ne legyen visszaállítható."
 
+[redact.tooltip.manual.header]
+title = "Kézi kitakarás vezérlők"
+
+[redact.tooltip.manual.markText]
+title = "Szöveg megjelölő eszköz"
+text = "Jelöljön meg közvetlenül szöveget a PDF-en kitakarásra. Kattintson és húzza a kívánt szöveg kiemeléséhez, amelyet ki szeretne takarni."
+
+[redact.tooltip.manual.markArea]
+title = "Terület megjelölő eszköz"
+text = "Rajzoljon téglalap alakú területeket a PDF-re a kitakarandó régiók megjelöléséhez. Hasznos képek, aláírások vagy szabálytalan alakzatok kitakarásához."
+
+[redact.tooltip.manual.apply]
+title = "Kitakarások alkalmazása"
+text = "A tartalom megjelölése után kattintson az 'Alkalmazás' gombra az összes megjelölt terület végleges kitakarásához. A függőben lévő szám jelzi, hány kitakarás vár alkalmazásra."
+bullet1 = "Alkalmazás előtt annyi területet jelölhet meg, amennyit szükséges"
+bullet2 = "Minden függőben lévő kitakarás egyszerre kerül alkalmazásra"
+bullet3 = "A kitakarások alkalmazás után nem vonhatók vissza"
+
 [redact.manual]
+title = "Kitakaró eszközök"
+instructions = "Jelöljön meg szöveget vagy rajzoljon területeket a PDF-en a kitakarandó tartalom megjelöléséhez."
+markText = "Szöveg megjelölése"
+markArea = "Terület megjelölése"
+pendingLabel = "Függőben:"
+applyWarning = "⚠️ Végleges alkalmazás, nem vonható vissza, és az alatta lévő adatok törlődnek"
+apply = "Alkalmazás"
+noMarks = "Nincsenek kitakarási jelölések. Használja a fenti eszközöket a tartalom kitakarásra jelöléséhez."
 header = "Kézi kitakarás"
+controlsTitle = "Kézi kitakarás vezérlők"
 textBasedRedaction = "Szöveg alapú kitakarás"
 pageBasedRedaction = "Oldal alapú kitakarás"
 convertPDFToImageLabel = "PDF konvertálása PDF-Image formátumra (a doboz mögötti szöveg eltávolításához)"
@@ -3256,6 +3463,19 @@ placeholder = "Adja meg a vízszintes felosztások számát"
 [split-by-sections.vertical]
 label = "Függőleges felosztások"
 placeholder = "Adja meg a függőleges felosztások számát"
+
+[split-by-sections.splitMode]
+label = "Felosztási mód"
+description = "Válassza ki, hogyan ossza fel az oldalakat"
+splitAll = "Összes oldal felosztása"
+splitAllExceptFirst = "Összes oldal felosztása az első kivételével"
+splitAllExceptLast = "Összes oldal felosztása az utolsó kivételével"
+splitAllExceptFirstAndLast = "Összes oldal felosztása az első és az utolsó kivételével"
+custom = "Egyéni oldalak"
+
+[split-by-sections.customPages]
+label = "Egyéni oldalszámok"
+placeholder = "pl. 2,4,6"
 
 [AddStampRequest]
 tags = "Pecsét,Kép hozzáadása,középre igazítás,Vízjel,PDF,Beágyazás,Testreszabás"
@@ -3618,6 +3838,19 @@ filesize = "Fájlméret"
 [compress.grayscale]
 label = "Szürkeárnyalatok alkalmazása tömörítéshez"
 
+[compress.linearize]
+label = "PDF linearizálása a gyors webes megjelenítéshez"
+
+[compress.lineArt]
+label = "Képek átalakítása vonalrajzzá"
+description = "ImageMagick használata az oldalak nagy kontrasztú fekete-fehérré alakításához a maximális méretcsökkentés érdekében."
+unavailable = "Az ImageMagick nincs telepítve vagy engedélyezve ezen a szerveren"
+detailLevel = "Részletesség"
+edgeEmphasis = "Élkiemelés"
+edgeLow = "Enyhe"
+edgeMedium = "Kiegyensúlyozott"
+edgeHigh = "Erős"
+
 [compress.tooltip.header]
 title = "Tömörítési beállítások áttekintése"
 
@@ -3635,6 +3868,10 @@ bullet2 = "Magasabb értékek csökkentik a fájlméretet"
 title = "Szürkeárnyalatos"
 text = "Válassza ezt az opciót az összes kép fekete-fehérre konvertálásához, ami jelentősen csökkentheti a fájlméretet, különösen beszkennelt PDF-eknél vagy képekkel teli dokumentumoknál."
 
+[compress.tooltip.lineArt]
+title = "Vonalrajz"
+text = "Az oldalak átalakítása nagy kontrasztú fekete-fehérré az ImageMagick segítségével. A Részletességgel szabályozhatja, mennyi tartalom váljon feketévé, az Élkiemeléssel pedig, mennyire agresszíven történjen az élek felismerése."
+
 [compress.error]
 failed = "Hiba történt a PDF tömörítése közben."
 
@@ -3646,6 +3883,11 @@ failed = "Hiba történt a PDF tömörítése közben."
 [compress.selectText.1]
 _value = "Tömörítési beállítások"
 1 = "1-3 PDF tömörítés,</br> 4-6 enyhe kép tömörítés,</br> 7-9 intenzív kép tömörítés Jelentősen csökkenti a kép minőségét"
+
+[compress.compressionLevel]
+range1to3 = "Az alacsonyabb értékek megőrzik a minőséget, de nagyobb fájlméretet eredményeznek"
+range4to6 = "Közepes tömörítés mérsékelt minőségromlással"
+range7to9 = "A magasabb értékek jelentősen csökkentik a fájlméretet, de csökkenthetik a képélességet"
 
 [decrypt]
 passwordPrompt = "Ez a fájl jelszóval védett. Kérjük, adja meg a jelszót:"
@@ -3886,22 +4128,97 @@ deleteSelected = "Kijelölt oldalak törlése"
 closePdf = "PDF bezárása"
 exportAll = "PDF exportálása"
 downloadSelected = "Kijelölt fájlok letöltése"
-downloadAll = "Összes letöltése"
-saveAll = "Összes mentése"
+annotations = "Jegyzetek"
+exportSelected = "Kijelölt oldalak exportálása"
+saveChanges = "Változtatások mentése"
 toggleTheme = "Téma váltása"
-toggleBookmarks = "Könyvjelzők megjelenítése/elrejtése"
 language = "Nyelv"
+toggleAnnotations = "Jegyzetek láthatóságának váltása"
 search = "PDF keresése"
 panMode = "Pásztázó mód"
+applyRedactionsFirst = "Előbb alkalmazza a kitakarásokat"
 rotateLeft = "Forgatás balra"
 rotateRight = "Forgatás jobbra"
 toggleSidebar = "Oldalsáv ki/be"
-exportSelected = "Kijelölt oldalak exportálása"
-toggleAnnotations = "Jegyzetek láthatóságának váltása"
-annotationMode = "Jegyzetelési mód váltása"
+toggleBookmarks = "Könyvjelzők megjelenítése/elrejtése"
 print = "PDF nyomtatása"
 draw = "Rajzolás"
+redact = "Kitakarás"
+exitRedaction = "Kilépés a kitakarás módból"
 save = "Mentés"
+downloadAll = "Összes letöltése"
+saveAll = "Összes mentése"
+
+[textAlign]
+left = "Balra"
+center = "Középre"
+right = "Jobbra"
+
+[annotation]
+title = "Jegyzetelés"
+desc = "Használjon kiemelést, tollat, szöveget és jegyzeteket. A változások élők maradnak — nincs szükség lapításra."
+highlight = "Kiemelés"
+pen = "Toll"
+text = "Szövegdoboz"
+note = "Jegyzet"
+rectangle = "Téglalap"
+ellipse = "Ellipszis"
+select = "Kijelölés"
+exit = "Kilépés a jegyzetelésből"
+strokeWidth = "Vonalvastagság"
+opacity = "Átlátszóság"
+strokeOpacity = "Körvonal átlátszósága"
+fillOpacity = "Kitöltés átlátszósága"
+fontSize = "Betűméret"
+chooseColor = "Szín kiválasztása"
+color = "Szín"
+strokeColor = "Körvonal színe"
+fillColor = "Kitöltés színe"
+underline = "Aláhúzás"
+strikeout = "Áthúzás"
+squiggly = "Hullámos aláhúzás"
+inkHighlighter = "Szabadkézi kiemelő"
+freehandHighlighter = "Szabadkézi kiemelő"
+square = "Négyzet"
+circle = "Kör"
+polygon = "Sokszög"
+line = "Vonal"
+stamp = "Kép hozzáadása"
+textMarkup = "Szövegkiemelés"
+drawing = "Rajz"
+shapes = "Alakzatok"
+notesStamps = "Jegyzetek és bélyegek"
+settings = "Beállítások"
+borderOn = "Szegély: be"
+borderOff = "Szegély: ki"
+editInk = "Toll szerkesztése"
+editLine = "Vonal szerkesztése"
+editNote = "Jegyzet szerkesztése"
+editText = "Szövegdoboz szerkesztése"
+editTextMarkup = "Szövegkiemelés szerkesztése"
+editSelected = "Jegyzet szerkesztése"
+editSquare = "Négyzet szerkesztése"
+editCircle = "Kör szerkesztése"
+editPolygon = "Sokszög szerkesztése"
+unsupportedType = "Ennek a jegyzettípusnak a szerkesztése nem teljes körűen támogatott."
+textAlignment = "Szöveg igazítása"
+noteIcon = "Jegyzet ikonja"
+imagePreview = "Előnézet"
+contents = "Szöveg"
+backgroundColor = "Háttérszín"
+clearBackground = "Háttér eltávolítása"
+noBackground = "Nincs háttér"
+stampSettings = "Bélyeg beállításai"
+savingCopy = "Letöltés előkészítése..."
+saveFailed = "Nem sikerült a másolat mentése"
+saveReady = "Letöltés kész"
+selectAndMove = "Kijelölés és szerkesztés"
+editSelectDescription = "Kattintson egy meglévő jegyzetre a szín, átlátszóság, szöveg vagy méret szerkesztéséhez."
+editStampHint = "A kép módosításához törölje ezt a bélyeget, és adjon hozzá újat."
+editSwitchToSelect = "Váltson Kijelölés és szerkesztés módra ennek a jegyzetnek a szerkesztéséhez."
+undo = "Visszavonás"
+redo = "Újra"
+applyChanges = "Változtatások alkalmazása"
 saveChanges = "Változtatások mentése"
 
 [search]
@@ -3953,12 +4270,20 @@ settings = "Beáll."
 adminSettings = "Admin beáll."
 allTools = "All Tools"
 reader = "Olvasó"
+tours = "Bemutatók"
+showMeAround = "Vezessen körbe"
+
+[quickAccess.toursTooltip]
+admin = "Itt nézhet bemutatókat: Eszköztúra, új V2 elrendezés túra és Admin túra."
+user = "Itt nézhet bemutatókat: Eszköztúra és az új V2 elrendezés túra."
 
 [quickAccess.helpMenu]
 toolsTour = "Eszköztúra"
 toolsTourDesc = "Ismerje meg, mire képesek az eszközök"
 adminTour = "Admin túra"
 adminTourDesc = "Fedezze fel az admin beállításokat és funkciókat"
+whatsNewTour = "Nézze meg, mi új a V2-ben"
+whatsNewTourDesc = "A frissített elrendezés bejárása"
 
 [admin]
 error = "Hiba"
@@ -3977,6 +4302,8 @@ fetchError = "A beállítások betöltése sikertelen"
 saveError = "A beállítások mentése sikertelen"
 saved = "A beállítások sikeresen mentve"
 saveSuccess = "A beállítások sikeresen mentve"
+success = "A beállítások sikeresen mentve"
+error = "Nem sikerült menteni a beállításokat"
 save = "Változtatások mentése"
 discard = "Elvetés"
 restartRequired = "Újraindítás szükséges"
@@ -4099,6 +4426,13 @@ description = "A WeasyPrint futtatható állomány elérési útja HTML–PDF á
 [admin.settings.general.customPaths.operations.unoconvert]
 label = "Unoconvert futtatható állomány"
 description = "Elérési út a LibreOffice unoconverthez dokumentumkonverziókhoz (hagyja üresen az alapértelmezettért: /opt/venv/bin/unoconvert)"
+
+[admin.settings.general.frontendUrl]
+label = "Frontend URL"
+description = "A frontend alap URL-je (pl. https://pdf.example.com). E-mail meghívó linkekhez és mobil QR-kódos feltöltésekhez használjuk. Hagyja üresen a backend URL használatához."
+
+[admin.settings.badge]
+clickToUpgrade = "Kattintson a csomag részleteihez"
 
 [admin.settings.security]
 title = "Biztonság"
@@ -4236,6 +4570,19 @@ connect = "Csatlakozás"
 disconnect = "Leválasztás"
 disconnected = "A szolgáltató sikeresen leválasztva"
 disconnectError = "A szolgáltató leválasztása nem sikerült"
+mobileScannerConvertToPdf = "Képek átalakítása PDF-be"
+mobileScannerConvertToPdfDesc = "A feltöltött képek automatikus PDF-formátumba konvertálása. Kikapcsolva a képek változatlanok maradnak."
+mobileScannerImageResolution = "Képfelbontás"
+mobileScannerImageResolutionDesc = "A feltöltött képek felbontása. A „Csökkentett” legfeljebb 1200 px-re méretezi a képeket a fájlméret csökkentése érdekében."
+imageResolutionFull = "Teljes (eredeti méret)"
+imageResolutionReduced = "Csökkentett (max. 1200 px)"
+mobileScannerPageFormat = "Oldalformátum"
+mobileScannerPageFormatDesc = "A konvertált képek PDF-oldalmérete. A „Megtartás” az eredeti képméreteket használja."
+pageFormatKeep = "Megtartás (eredeti méretek)"
+pageFormatA4 = "A4 (210×297 mm)"
+pageFormatLetter = "Letter (8,5×11 hüvelyk)"
+mobileScannerStretchToFit = "Kitöltésre nyújtás"
+mobileScannerStretchToFitDesc = "A képek nyújtása az egész oldal kitöltéséhez. Kikapcsolva a képek középre igazítva, megtartott képaránnyal jelennek meg."
 
 [admin.settings.connections.ssoAutoLogin]
 label = "SSO automatikus bejelentkezés"
@@ -4303,6 +4650,122 @@ description = "Felhasználói fiókok automatikus létrehozása az első SAML2 b
 [admin.settings.connections.saml2.blockRegistration]
 label = "Regisztráció letiltása"
 description = "Új felhasználói regisztráció megakadályozása SAML2-n keresztül"
+
+[admin.settings.connections.mobileScanner]
+label = "Mobiltelefonos feltöltés"
+enable = "QR-kódos feltöltés engedélyezése"
+description = "Engedélyezze, hogy a felhasználók QR-kód beolvasásával mobil eszközről töltsenek fel fájlokat"
+note = "Megjegyzés: A Frontend URL beállítása szükséges. "
+link = "Beállítás a rendszerbeállításokban"
+mobileScannerConvertToPdf = "Képek átalakítása PDF-be"
+mobileScannerConvertToPdfDesc = "A feltöltött képek automatikus PDF-formátumba konvertálása. Kikapcsolva a képek változatlanok maradnak."
+mobileScannerImageResolution = "Képfelbontás"
+mobileScannerImageResolutionDesc = "A feltöltött képek felbontása. A „Csökkentett” legfeljebb 1200 px-re méretezi a képeket a fájlméret csökkentése érdekében."
+imageResolutionFull = "Teljes (eredeti méret)"
+imageResolutionReduced = "Csökkentett (max. 1200 px)"
+mobileScannerPageFormat = "Oldalformátum"
+mobileScannerPageFormatDesc = "A konvertált képek PDF-oldalmérete. A „Megtartás” az eredeti képméreteket használja."
+pageFormatKeep = "Megtartás (eredeti méretek)"
+pageFormatA4 = "A4 (210×297 mm)"
+pageFormatLetter = "Letter (8,5×11 hüvelyk)"
+mobileScannerStretchToFit = "Kitöltésre nyújtás"
+mobileScannerStretchToFitDesc = "A képek nyújtása az egész oldal kitöltéséhez. Kikapcsolva a képek középre igazítva, megtartott képaránnyal jelennek meg."
+
+[admin.settings.telegram]
+title = "Telegram bot"
+description = "A Telegram bot csatlakozásának, hozzáférésének és visszajelzési viselkedésének konfigurálása."
+
+[admin.settings.telegram.enabled]
+label = "Telegram bot engedélyezése"
+description = "Lehetővé teszi a felhasználóknak a Stirling PDF használatát a beállított Telegram botján keresztül."
+
+[admin.settings.telegram.botUsername]
+label = "Bot felhasználónév"
+description = "A Telegram bot nyilvános felhasználóneve."
+
+[admin.settings.telegram.botToken]
+label = "Bot token"
+description = "A BotFather által biztosított API token a Telegram bothoz."
+
+[admin.settings.telegram.pipelineInboxFolder]
+label = "Bejövő mappa"
+description = "A pipeline könyvtár alatti mappa, ahová a beérkező Telegram fájlok kerülnek."
+
+[admin.settings.telegram.customFolderSuffix]
+label = "Egyedi mappautótag használata"
+description = "A csevegés azonosítójának hozzáfűzése a bejövő fájlmappákhoz, hogy csevegésenként elkülönüljenek a feltöltések."
+
+[admin.settings.telegram.accessControl]
+title = "Hozzáférés-szabályozás"
+description = "Korlátozza, mely felhasználók vagy csatornák léphetnek kapcsolatba a bottal."
+
+[admin.settings.telegram.enableAllowUserIDs]
+label = "Csak megadott felhasználóazonosítók engedélyezése"
+description = "Bekapcsolva csak a listában szereplő felhasználóazonosítók használhatják a botot."
+
+[admin.settings.telegram.allowUserIDs]
+label = "Engedélyezett felhasználóazonosítók"
+description = "Adja meg a Telegram felhasználóazonosítókat, akik használhatják a botot."
+placeholder = "Adjon hozzá azonosítót és nyomja meg az entert"
+
+[admin.settings.telegram.enableAllowChannelIDs]
+label = "Csak megadott csatornaazonosítók engedélyezése"
+description = "Bekapcsolva csak a listában szereplő csatornaazonosítók használhatják a botot."
+
+[admin.settings.telegram.allowChannelIDs]
+label = "Engedélyezett csatornaazonosítók"
+description = "Adja meg a Telegram csatornaazonosítókat, amelyek használhatják a botot."
+placeholder = "Adjon hozzá csatornaazonosítót és nyomja meg az entert"
+
+[admin.settings.telegram.processing]
+title = "Feldolgozás"
+description = "A lekérdezési időközök és időkorlátok szabályozása a Telegram feltöltésekhez."
+
+[admin.settings.telegram.processingTimeoutSeconds]
+label = "Feldolgozási időkorlát (másodperc)"
+description = "Maximális várakozási idő egy feldolgozási feladatra hiba jelentése előtt."
+
+[admin.settings.telegram.pollingIntervalMillis]
+label = "Lekérdezési időköz (ms)"
+description = "Az új Telegram frissítések ellenőrzései közti időköz."
+
+[admin.settings.telegram.feedback]
+title = "Visszajelzések"
+description = "Válassza ki, mikor küldjön a bot visszajelzést a felhasználóknak és csatornáknak."
+
+[admin.settings.telegram.feedback.general.enabled]
+label = "Visszajelzések engedélyezése"
+description = "Szabályozza, küld-e a bot egyáltalán visszajelzéseket."
+
+[admin.settings.telegram.feedback.channel]
+title = "Csatorna visszajelzési szabályok"
+
+[admin.settings.telegram.feedback.channel.noValidDocument]
+label = "„Nincs érvényes dokumentum” megjelenítése (csatorna)"
+description = "A „nincs érvényes dokumentum” válasz elnyomása csatorna feltöltéseknél."
+
+[admin.settings.telegram.feedback.channel.errorProcessing]
+label = "Feldolgozási hibák megjelenítése (csatorna)"
+description = "Feldolgozási hibaüzenetek küldése csatornáknak."
+
+[admin.settings.telegram.feedback.channel.errorMessage]
+label = "Hibaüzenetek megjelenítése (csatorna)"
+description = "Részletes hibaüzenetek megjelenítése csatornák számára."
+
+[admin.settings.telegram.feedback.user]
+title = "Felhasználói visszajelzési szabályok"
+
+[admin.settings.telegram.feedback.user.noValidDocument]
+label = "„Nincs érvényes dokumentum” megjelenítése (felhasználó)"
+description = "A „nincs érvényes dokumentum” válasz elnyomása felhasználói feltöltéseknél."
+
+[admin.settings.telegram.feedback.user.errorProcessing]
+label = "Feldolgozási hibák megjelenítése (felhasználó)"
+description = "Feldolgozási hibaüzenetek küldése felhasználóknak."
+
+[admin.settings.telegram.feedback.user.errorMessage]
+label = "Hibaüzenetek megjelenítése (felhasználó)"
+description = "Részletes hibaüzenetek megjelenítése felhasználók számára."
 
 [admin.settings.database]
 title = "Adatbázis"
@@ -4484,6 +4947,10 @@ description = "Az adminok e-mailben hívhatnak meg felhasználókat automatikusa
 [admin.settings.mail.frontendUrl]
 label = "Frontend URL"
 description = "Alap URL a frontendhez (pl. https://pdf.example.com). E-mailekben a meghívó linkek generálásához használatos. Hagyja üresen a backend URL használatához."
+
+[admin.settings.mail.frontendUrlNote]
+note = "Megjegyzés: A Frontend URL beállítása szükséges. "
+link = "Beállítás a rendszerbeállításokban"
 
 [admin.settings.legal]
 title = "Jogi dokumentumok"
@@ -4669,6 +5136,9 @@ googleDriveShort = "Drive"
 myFiles = "Saját fájlok"
 noRecentFiles = "Nem találhatók legutóbbi fájlok"
 googleDriveNotAvailable = "Google Drive integráció nem érhető el"
+mobileUpload = "Mobil feltöltés"
+mobileShort = "Mobil"
+mobileUploadNotAvailable = "A mobil feltöltés nincs engedélyezve"
 downloadSelected = "Kiválasztott letöltése"
 saveSelected = "Kijelöltek mentése"
 openFiles = "Fájlok megnyitása"
@@ -4984,6 +5454,7 @@ loading = "Betöltés..."
 back = "Vissza"
 continue = "Folytatás"
 error = "Hiba"
+save = "Mentés"
 
 [config.overview]
 title = "Alkalmazás konfigurációja"
@@ -5045,6 +5516,15 @@ warning = "⚠️ Figyelmeztetés: Ez a művelet új API-kulcsokat hoz létre, �
 impact = "Minden olyan alkalmazás vagy szolgáltatás, amely jelenleg ezeket a kulcsokat használja, leáll, amíg az új kulcsokra nem frissíti őket."
 confirmPrompt = "Biztosan folytatja?"
 confirmCta = "Kulcsok frissítése"
+
+[config.apiKeys.alert]
+apiKeyErrorTitle = "API‑kulcs hiba"
+failedToCreateApiKey = "Nem sikerült létrehozni az API‑kulcsot."
+failedToRetrieveApiKey = "Nem sikerült lekérni az API‑kulcsot a válaszból."
+failedToFetchApiKey = "Nem sikerült lekérni az API‑kulcsot."
+apiKeyRefreshed = "API‑kulcs frissítve"
+apiKeyRefreshedBody = "Az API‑kulcsát sikeresen frissítettük."
+failedToRefreshApiKey = "Nem sikerült frissíteni az API‑kulcsot."
 
 [AddAttachmentsRequest]
 attachments = "Mellékletek kiválasztása"
@@ -5150,6 +5630,16 @@ finish = "Befejezés"
 startTour = "Túra indítása"
 startTourDescription = "Vezetett túra a Stirling PDF fő funkcióiról"
 
+[onboarding.whatsNew]
+quickAccess = "Kezdje a <strong>Gyors elérés</strong> sávval, hogy a Megjelenítő, az Automatizálás, a fájlok és az összes bemutató között váltson."
+leftPanel = "A bal oldali <strong>Eszközök</strong> panelen minden elérhető funkciót megtalál. Böngésszen kategóriák szerint vagy keressen gyors eszközválasztáshoz."
+fileUpload = "A <strong>Fájlok</strong> gombbal töltsön fel vagy válasszon egy nemrég megnyitott PDF-et. Betöltünk egy mintát, hogy lássa a munkaterületet."
+rightRail = "A <strong>jobb oldali sáv</strong> gyors műveleteket tartalmaz a fájlválasztáshoz, a téma vagy nyelv módosításához és az eredmények letöltéséhez."
+topBar = "A felső sávban válthat a <strong>Megjelenítő</strong>, az <strong>Oldalszerkesztő</strong> és az <strong>Aktív fájlok</strong> között."
+pageEditorView = "Váltson az Oldalszerkesztőre az oldalak átrendezéséhez, forgatásához vagy törléséhez."
+activeFilesView = "Az Aktív fájlokban láthat mindent, ami meg van nyitva, és kiválaszthatja, min dolgozik."
+wrapUp = "Ez az, ami újdonság a V2-ben. Nyissa meg bármikor a <strong>Bemutatók</strong> menüt ennek, az Eszköztúrának vagy az Admin túrának az újra lejátszásához."
+
 [onboarding.welcomeModal]
 title = "Üdvözli a Stirling PDF!"
 description = "Szeretne egy gyors, 1 perces túrát, hogy megismerje a fő funkciókat és a kezdést?"
@@ -5170,6 +5660,10 @@ download = "Letöltés →"
 showMeAround = "Körbevezetés"
 skipTheTour = "Körbevezetés kihagyása"
 
+[onboarding.tourOverview]
+title = "Bemutató áttekintése"
+body = "A Stirling PDF V2 tucatnyi eszközzel és megújult elrendezéssel érkezik. Tegyen egy gyors túrát, hogy lássa, mi változott és hol találja a szükséges funkciókat."
+
 [onboarding.serverLicense]
 skip = "Kihagyás most"
 seePlans = "Csomagok megtekintése →"
@@ -5177,7 +5671,7 @@ upgrade = "Frissítés most →"
 freeTitle = "Szerverlicenc"
 overLimitTitle = "Szerverlicenc szükséges"
 overLimitBody = "Licencelésünk szerverenként legfeljebb <strong>{{freeTierLimit}}</strong> felhasználót enged ingyen. Önnek <strong>{{overLimitUserCopy}}</strong> Stirling felhasználója van. A zavartalan használathoz váltson a Stirling Server csomagra – <strong>korlátlan hely</strong>, PDF szövegszerkesztés és teljes adminisztrátori vezérlés $99/szerver/hó áron."
-freeBody = "A <strong>Open-Core</strong> licencünk szerverenként legfeljebb <strong>{{freeTierLimit}}</strong> felhasználót engedélyez ingyenesen. A zökkenőmentes skálázáshoz a Stirling Server csomagot ajánljuk - <strong>korlátlan felhasználó</strong> és <strong>SSO támogatás</strong> $99/szerver/hó."
+freeBody = "Az <strong>Open-Core</strong> licencelésünk szerverenként legfeljebb <strong>{{freeTierLimit}}</strong> felhasználót enged ingyen. A zavartalan bővüléshez és az új <strong>PDF szövegszerkesztő eszköz</strong> korai eléréséhez a Stirling Server csomagot ajánljuk – teljes szerkesztés és <strong>korlátlan hely</strong> $99/szerver/hó áron."
 
 [onboarding.desktopInstall]
 title = "Letöltés"
@@ -5281,6 +5775,31 @@ error = "Nem sikerült frissíteni a felhasználói állapotot"
 [workspace.people.delete]
 success = "Felhasználó sikeresen törölve"
 error = "Nem sikerült törölni a felhasználót"
+
+[workspace.people.changePassword]
+action = "Jelszó módosítása"
+title = "Jelszó módosítása"
+subtitle = "Jelszó frissítése ehhez:"
+newPassword = "Új jelszó"
+confirmPassword = "Jelszó megerősítése"
+placeholder = "Adjon meg egy új jelszót"
+confirmPlaceholder = "Adja meg újra az új jelszót"
+passwordRequired = "Kérjük, adjon meg egy új jelszót"
+passwordMismatch = "A jelszavak nem egyeznek"
+generateRandom = "Biztonságos jelszó generálása"
+generatedPreview = "Generált jelszó:"
+copyTooltip = "Másolás a vágólapra"
+copiedToClipboard = "A jelszó a vágólapra másolva"
+copyFailed = "A jelszó másolása nem sikerült"
+sendEmail = "E-mail küldése a felhasználónak a változásról"
+includePassword = "Az új jelszó szerepeljen az e-mailben"
+forcePasswordChange = "A felhasználó kényszerítése a jelszó megváltoztatására a következő bejelentkezéskor"
+emailUnavailable = "Ennek a felhasználónak az e-mail címe érvénytelen. Az értesítések le vannak tiltva."
+smtpDisabled = "Az e-mail értesítésekhez az SMTP engedélyezése szükséges a beállításokban."
+notifyOnly = "E-mailt küldünk jelszó nélkül, amelyben értesítjük a felhasználót, hogy egy admin módosította a jelszót."
+submit = "Jelszó frissítése"
+success = "A jelszó sikeresen frissítve"
+error = "A jelszó frissítése nem sikerült"
 
 [workspace.people.emailInvite]
 tab = "E-mail meghívó"
@@ -5458,6 +5977,28 @@ contactSales = "Kapcsolat az értékesítéssel"
 contactToUpgrade = "Lépjen kapcsolatba velünk a csomag frissítéséhez vagy testreszabásához"
 maxUsers = "Max. felhasználók"
 upTo = "Legfeljebb"
+getLicense = "Szerverlicenc beszerzése"
+upgradeToEnterprise = "Frissítés Enterprise-ra"
+selectPeriod = "Számlázási időszak kiválasztása"
+monthlyBilling = "Havi számlázás"
+yearlyBilling = "Éves számlázás"
+checkoutOpened = "Pénztár megnyitva"
+checkoutInstructions = "Fejezze be a vásárlást a Stripe fülön. A fizetés után térjen vissza ide, és frissítse az oldalt a licenc aktiválásához. E-mailben is megkapja a licenckulcsot."
+activateLicense = "Licenc aktiválása"
+
+[plan.static.licenseActivation]
+checkoutOpened = "Pénztár új lapon megnyitva"
+instructions = "Fejezze be a vásárlást a Stripe fülön. A fizetés befejezése után e-mailben megkapja a licenckulcsot."
+enterKey = "Adja meg lent a licenckulcsot a csomag aktiválásához:"
+keyDescription = "Illessze be az e-mailben kapott licenckulcsot"
+activate = "Licenc aktiválása"
+doLater = "Majd később"
+success = "A licenc aktiválva!"
+successMessage = "A licenc sikeresen aktiválva. Most bezárhatja ezt az ablakot."
+
+[plan.static.billingPortal]
+title = "E-mail ellenőrzés szükséges"
+message = "A Stripe számlázási portálon ellenőriznie kell az e-mail-címét. Ellenőrizze az e-mailjeit a bejelentkezési linkért."
 
 [plan.period]
 month = "hónap"
@@ -5661,6 +6202,8 @@ notAvailable = "Audit rendszer nem érhető el"
 notAvailableMessage = "Az audit rendszer nincs konfigurálva vagy nem elérhető."
 disabled = "Az audit naplózás le van tiltva"
 disabledMessage = "Engedélyezze az audit naplózást az alkalmazás konfigurációjában a rendszeresemények követéséhez."
+enterpriseRequired = "Vállalati licenc szükséges"
+enterpriseRequiredMessage = "A naplózási rendszer vállalati funkció. Kérjük, váltson vállalati licencre a naplók és analitikák eléréséhez."
 
 [audit.error]
 title = "Hiba az audit rendszer betöltésekor"
@@ -5815,6 +6358,7 @@ subtitle = "Jelentkezzen be Stirling-fiókjával"
 [setup.selfhosted]
 title = "Bejelentkezés a szerverre"
 subtitle = "Adja meg a szerver hitelesítő adatait"
+link = "vagy csatlakozzon egy saját üzemeltetésű fiókhoz"
 
 [setup.server]
 title = "Csatlakozás a szerverhez"
@@ -5831,8 +6375,17 @@ description = "Adja meg az önhostolt Stirling PDF szerver teljes URL-jét"
 
 [setup.server.error]
 emptyUrl = "Adjon meg egy szerver URL-t"
+invalidUrl = "Érvénytelen URL-formátum. Adjon meg egy érvényes URL-t, például https://your-server.com"
 unreachable = "Nem sikerült kapcsolódni a szerverhez"
 testFailed = "A kapcsolat tesztje sikertelen"
+configFetch = "Nem sikerült letölteni a szerver konfigurációját. Ellenőrizze az URL-t, és próbálja meg újra."
+
+[setup.server.error.securityDisabled]
+title = "A bejelentkezés nincs engedélyezve"
+body = "Ezen a szerveren a bejelentkezés nincs engedélyezve. A csatlakozáshoz engedélyeznie kell a hitelesítést:"
+step1 = "Állítsa be a DOCKER_ENABLE_SECURITY=true értéket a környezetében"
+step2 = "Vagy állítsa be a security.enableLogin=true értéket a settings.yml fájlban"
+step3 = "Indítsa újra a szervert"
 
 [setup.login]
 title = "Bejelentkezés"
@@ -5841,6 +6394,7 @@ connectingTo = "Kapcsolódás ehhez:"
 submit = "Bejelentkezés"
 signInWith = "Bejelentkezés ezzel"
 oauthPending = "Böngésző megnyitása hitelesítéshez..."
+sso = "Egyszeri bejelentkezés"
 orContinueWith = "Vagy folytassa e-maillel"
 serverRequirement = "Megjegyzés: A szerveren engedélyezni kell a bejelentkezést."
 showInstructions = "Hogyan engedélyezhető?"
@@ -5905,6 +6459,9 @@ earlyAccess = "Korai hozzáférés"
 reset = "Módosítások visszaállítása"
 downloadJson = "JSON letöltése"
 generatePdf = "PDF generálása"
+saveChanges = "Változtatások mentése"
+applyChanges = "Változtatások alkalmazása"
+downloadCopy = "Másolat letöltése"
 
 [pdfTextEditor.options.autoScaleText]
 title = "Szöveg automatikus méretezése a dobozokhoz"
@@ -5922,6 +6479,24 @@ descriptionInline = "Tipp: Tartsa lenyomva a Ctrl (Cmd) vagy a Shift billentyűt
 [pdfTextEditor.options.forceSingleElement]
 title = "Szerkesztett szöveg rögzítése egyetlen PDF-elemhez"
 description = "Bekapcsolva a szerkesztő minden szerkesztett szövegdobozt egy PDF szövegelemként exportál, elkerülve az átfedő glifákat vagy kevert betűtípusokat."
+
+[pdfTextEditor.options.advanced]
+title = "Speciális beállítások"
+
+[pdfTextEditor.tooltip.header]
+title = "Előnézeti korlátozások"
+
+[pdfTextEditor.tooltip.textFocus]
+title = "Szöveg és képek fókusza"
+text = "Ez a munkaterület a szöveg szerkesztésére és a beágyazott képek áthelyezésére fókuszál. Az összetett oldalgrafika, űrlapelemek és rétegelt grafikák exportáláskor megmaradnak, de itt nem minden szerkeszthető teljes körűen."
+
+[pdfTextEditor.tooltip.previewVariance]
+title = "Előnézet eltérései"
+text = "Egyes vizuális elemek (például táblaszegélyek, alakzatok vagy jegyzetek megjelenése) nem biztos, hogy pontosan jelennek meg az előnézetben. Az exportált PDF lehetőség szerint megőrzi az eredeti rajzolási utasításokat."
+
+[pdfTextEditor.tooltip.alpha]
+title = "Alfa megjelenítő"
+text = "Ez az alfa megjelenítő még fejlődik — bizonyos betűtípusok, színek, áttetszőségi hatások és elrendezési részletek kissé eltérhetnek. Kérjük, megosztás előtt ellenőrizze a létrehozott PDF-et."
 
 [pdfTextEditor.manual]
 mergeTooltip = "Kijelölt dobozok egyesítése"
@@ -5942,6 +6517,8 @@ alpha = "Ez az alfa néző még fejlődik—bizonyos betűtípusok, színek, át
 [pdfTextEditor.empty]
 title = "Nincs dokumentum betöltve"
 subtitle = "Töltsön be egy PDF- vagy JSON-fájlt a szövegtartalom szerkesztésének megkezdéséhez."
+dropzone = "Húzzon ide egy PDF vagy JSON fájlt, vagy kattintson a tallózáshoz"
+dropzoneWithFiles = "Válasszon fájlt a Fájlok fülön, vagy húzzon ide egy PDF vagy JSON fájlt, illetve kattintson a tallózáshoz"
 
 [pdfTextEditor.welcomeBanner]
 title = "Üdvözöljük a PDF Text Editorben (korai hozzáférés)"
@@ -6042,3 +6619,58 @@ title = "Szöveg hozzáadásának eredménye"
 
 [addText.error]
 failed = "Hiba történt szöveg hozzáadásakor a PDF-hez."
+
+[mobileUpload]
+title = "Feltöltés mobilról"
+description = "Szkenneljen a fotók feltöltéséhez. A képek automatikusan PDF-be konvertálódnak."
+descriptionNoConvert = "Szkenneljen a fotók feltöltéséhez a mobileszközéről."
+error = "Kapcsolódási hiba"
+pollingError = "Hiba a fájlok ellenőrzésekor"
+sessionId = "Munkamenet-azonosító"
+sessionCreateError = "Nem sikerült létrehozni a munkamenetet"
+expiryWarning = "A munkamenet hamarosan lejár"
+expiryWarningMessage = "Ez a QR-kód {{seconds}} másodperc múlva lejár. Új kód automatikusan generálódik."
+filesReceived = "{{count}} fájl érkezett"
+connected = "Mobil eszköz csatlakoztatva"
+instructions = "Olvassa be a telefon kamerájával. A képek automatikusan PDF-be konvertálódnak."
+instructionsNoConvert = "Olvassa be a telefon kamerájával a fájlok feltöltéséhez."
+
+[mobileScanner]
+title = "Mobil szkenner"
+noSession = "Érvénytelen munkamenet"
+noSessionMessage = "Kérjük, érvényes QR-kód beolvasásával érje el ezt az oldalt."
+validating = "Munkamenet ellenőrzése..."
+sessionInvalid = "Munkamenet hiba"
+sessionExpired = "A munkamenet lejárt. Frissítsen, és próbálja újra."
+sessionNotFound = "A munkamenet nem található. Frissítsen, és próbálja újra."
+sessionValidationError = "Nem sikerült ellenőrizni a munkamenetet. Próbálja újra."
+uploadSuccess = "Sikeres feltöltés!"
+uploadSuccessMessage = "A képei átkerültek."
+httpsRequired = "A kameraeléréshez HTTPS vagy localhost szükséges. Használjon HTTPS-t, vagy érje el localhoston keresztül."
+uploadFailed = "A feltöltés nem sikerült. Próbálja újra."
+uploading = "Feltöltés..."
+connected = "Csatlakoztatva"
+connecting = "Csatlakozás..."
+chooseMethod = "Feltöltési mód választása"
+chooseMethodDescription = "Válassza ki, hogyan kíván dokumentumokat szkennelni és feltölteni"
+camera = "Kamera"
+cameraDescription = "Dokumentumok szkennelése az eszköz kamerájával, automatikus szegélyfelismeréssel"
+fileUpload = "Fájlfeltöltés"
+fileDescription = "Létező fotók vagy dokumentumok feltöltése az eszközről"
+cameraAccessDenied = "Kamera-hozzáférés megtagadva. Engedélyezze a kamerához való hozzáférést."
+back = "Vissza"
+settings = "Beállítások"
+edgeDetection = "Szegélyfelismerés"
+flashlight = "Zseblámpa"
+flash = "Vaku"
+processing = "Feldolgozás..."
+capture = "Fénykép készítése"
+selectFilesPrompt = "Válassza ki a feltöltendő fájlokat"
+selectImage = "Kép kiválasztása"
+preview = "Előnézet"
+retake = "Újrafotózás"
+addToBatch = "Hozzáadás a köteghez"
+upload = "Feltöltés"
+batchImages = "Köteg"
+clearBatch = "Törlés"
+uploadAll = "Összes feltöltése"
